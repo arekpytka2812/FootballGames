@@ -7,6 +7,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import java.lang.Character;
+
 public class UserAuthentication {
 
     public static UserAccount processLogin(Connection connection){
@@ -49,4 +51,34 @@ public class UserAuthentication {
         return new UserAccount(authResult.getString("login"), authResult.getString("password"), authResult.getString("fav_club"));
     }
 
+
+    public static boolean isValid(String value) {
+        return containsLowerCase(value) &&
+                containsUpperCase(value) &&
+                containsNumber(value) && value.length() > 7;
+    }
+
+    private static boolean containsLowerCase(String value) {
+        for(int i=0;i<value.length();i++){
+            if(Character.isLowerCase(value.charAt(i)))
+              return true;
+        }
+        return false;
+    }
+
+    private static boolean containsUpperCase(String value) {
+        for(int i=0;i<value.length();i++){
+            if(Character.isUpperCase(value.charAt(i)))
+                return true;
+        }
+        return false;
+    }
+
+    private static boolean containsNumber(String value) {
+        for(int i=0;i<value.length();i++){
+            if(Character.isDigit(value.charAt(i)))
+                return true;
+        }
+        return false;
+    }
 }
