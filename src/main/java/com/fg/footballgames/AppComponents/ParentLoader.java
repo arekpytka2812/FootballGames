@@ -11,9 +11,9 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.util.HashMap;
 
-public class SceneLoader {
+public class ParentLoader {
 
-    public static Scene loadScene(Class className, String fileName){
+    public static Parent loadParent(Class className, String fileName){
 
         Parent root = null;
 
@@ -23,9 +23,7 @@ public class SceneLoader {
             System.out.println("No nie tym razem");
         }
 
-        Scene scene = new Scene(root);
-
-        return scene;
+        return root;
     }
 
 }

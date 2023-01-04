@@ -16,6 +16,7 @@ public class QueryExecutor {
     private static final String insertTable = "INSERT INTO ? (?) VALUES (?)";
 
     public static String buildMultiColumnsQuery(List<String> columns, String table){
+
         StringBuilder query = new StringBuilder("select ");
 
         query.append(columns.get(0));

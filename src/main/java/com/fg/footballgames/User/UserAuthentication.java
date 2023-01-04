@@ -9,9 +9,7 @@ import java.sql.Statement;
 
 public class UserAuthentication {
 
-    public static UserAccount processLogin(Connection connection){
-
-        String login = "debil", password = "gruzarski";
+    public static UserAccount processLogin(Connection connection, String login, String password){
 
         UserAccount user = null;
 
