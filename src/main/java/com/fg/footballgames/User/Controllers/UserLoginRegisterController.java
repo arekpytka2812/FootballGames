@@ -1,12 +1,16 @@
 package com.fg.footballgames.User.Controllers;
 
+
 import com.fg.footballgames.AppComponents.ParentLoader;
+import com.fg.footballgames.User.UserAuthentication;
+
 import com.fg.footballgames.User.UserMain;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
+
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
@@ -37,6 +41,9 @@ public class UserLoginRegisterController {
     @FXML
     Button chooseClubButton;
 
+    @FXML
+    Label errorLabel;
+
     private Stage stage;
 
     @FXML
@@ -50,23 +57,25 @@ public class UserLoginRegisterController {
         clubChooser.setItems(clubList);
     }
 
-    @FXML
-    protected void loginButtonPressed(ActionEvent event) throws SQLException {
 
-        String username = loginField.getText();
-        String password = passwordField.getText();
-
-
-
+    public void loginButtonPressed(ActionEvent event){
+        if(loginField.getText().isEmpty())
+            errorLabel.setText("Login cannot be empty!");
+        else
+            errorLabel.setText("");
+        System.out.println("login");
     }
 
-    @FXML
-    protected void registerButtonPressed(ActionEvent event){
-
-        stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        var scene = new Scene(ParentLoader.loadParent(UserMain.class, "UserRegisterPage.fxml"));
-        stage.setScene(scene);
-        stage.show();
+    public void registerButtonPressed(ActionEvent event){
+        if(UserAuthentication.isValid(passwordField.getText())) {
+            errorLabel.setText("");
+            stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(SceneLoader.loadScene(UserMain.class, "UserRegisterPage.fxml"));
+            stage.show();
+        }
+        else{
+            errorLabel.setText("Password not match requirements!");
+        }
 
     }
 
