@@ -12,13 +12,8 @@ import javafx.fxml.FXML;
 import javafx.scene.Node;
 
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.stage.Stage;
-
-import java.sql.SQLException;
 
 
 public class UserLoginRegisterController {
@@ -36,7 +31,7 @@ public class UserLoginRegisterController {
     Button registerButton;
 
     @FXML
-    ComboBox<String> clubChooser = new ComboBox<String>();
+    ComboBox<String> clubChooser = new ComboBox<>();
 
     @FXML
     Button chooseClubButton;
@@ -63,6 +58,8 @@ public class UserLoginRegisterController {
             errorLabel.setText("Login cannot be empty!");
         else
             errorLabel.setText("");
+
+        // TODO login process
         System.out.println("login");
     }
 
@@ -70,7 +67,7 @@ public class UserLoginRegisterController {
         if(UserAuthentication.isValid(passwordField.getText())) {
             errorLabel.setText("");
             stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            stage.setScene(SceneLoader.loadScene(UserMain.class, "UserRegisterPage.fxml"));
+            stage.setScene(new Scene(ParentLoader.loadParent(UserMain.class, "UserRegisterPage.fxml")));
             stage.show();
         }
         else{
@@ -81,6 +78,7 @@ public class UserLoginRegisterController {
 
     @FXML
     protected void chooseButtonPressed(ActionEvent event){
+
         String chosenClub = clubChooser.getValue();
 
         stage = (Stage) ((Node)event.getSource()).getScene().getWindow();

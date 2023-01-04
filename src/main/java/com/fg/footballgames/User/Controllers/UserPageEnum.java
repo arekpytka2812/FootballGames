@@ -2,7 +2,6 @@ package com.fg.footballgames.User.Controllers;
 
 public enum UserPageEnum {
 
-    MainPage("UserMainCenter.fxml"),
     StandingsPage("UserStandingsCenter.fxml");
 
     private final String path;

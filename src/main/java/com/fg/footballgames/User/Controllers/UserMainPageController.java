@@ -2,6 +2,7 @@ package com.fg.footballgames.User.Controllers;
 
 import com.fg.footballgames.AppComponents.ParentLoader;
 import com.fg.footballgames.User.UserMain;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.MenuButton;
@@ -19,6 +20,9 @@ public class UserMainPageController {
 
     @FXML
     MenuButton viewPicker;
+
+    @FXML
+    Button mainPageButton;
 
     @FXML
     Button accountSettingButton;
@@ -46,9 +50,29 @@ public class UserMainPageController {
         }
 
         viewPicker.getItems().addAll(menuItems);
-        viewPicker.setText(viewPicker.getItems().get(0).getText());
+        viewPicker.setText("---");
 
-        mainPane.setCenter(ParentLoader.loadParent(UserMain.class, UserPageEnum.MainPage.getPath()));
+        mainPane.setCenter(ParentLoader.loadParent(UserMain.class, "UserMainCenter.fxml"));
     }
+
+    @FXML
+    private void mainPageButtonPressed(ActionEvent event){
+        mainPane.setCenter(ParentLoader.loadParent(UserMain.class, "UserMainCenter.fxml"));
+        viewPicker.setText("---");
+    }
+
+    @FXML
+    private void accountSettingButtonPressed(ActionEvent event){
+        mainPane.setCenter(ParentLoader.loadParent(UserMain.class, "UserAccountSettingsPage.fxml"));
+        viewPicker.setText("---");
+    }
+
+    @FXML
+    private void aboutButtonPressed(ActionEvent event){
+        mainPane.setCenter(ParentLoader.loadParent(UserMain.class, "UserAboutPage.fxml"));
+        viewPicker.setText("---");
+    }
+
+
 
 }

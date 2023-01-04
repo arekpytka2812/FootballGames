@@ -10,16 +10,17 @@
    <children>
       <BorderPane fx:id="mainPane" prefHeight="400.0" prefWidth="600.0" AnchorPane.topAnchor="0.0">
          <top>
-            <AnchorPane prefHeight="24.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+            <AnchorPane prefHeight="27.0" prefWidth="600.0" BorderPane.alignment="CENTER">
                <children>
-                  <MenuButton fx:id="viewPicker" layoutX="429.0" layoutY="1.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="170.0" text="View Picker">
+                  <MenuButton fx:id="viewPicker" layoutX="424.0" layoutY="1.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="170.0" text="View Picker">
                     <items>
                       <MenuItem mnemonicParsing="false" text="Action 1" />
                       <MenuItem mnemonicParsing="false" text="Action 2" />
                     </items>
                   </MenuButton>
-                  <Button fx:id="accountSettingButton" layoutX="68.0" layoutY="1.0" mnemonicParsing="false" text="Account Settings" />
-                  <Button fx:id="aboutButton" layoutY="1.0" mnemonicParsing="false" text="About" />
+                  <Button fx:id="accountSettingButton" layoutX="56.0" layoutY="1.0" mnemonicParsing="false" onAction="#accountSettingButtonPressed" text="Account Settings" />
+                  <Button fx:id="aboutButton" layoutY="1.0" mnemonicParsing="false" onAction="#aboutButtonPressed" text="About" />
+                   <Button fx:id="mainPageButton" layoutX="264.0" layoutY="1.0" mnemonicParsing="false" onAction="#mainPageButtonPressed" text="Main Page" />
                </children>
             </AnchorPane>
          </top>
