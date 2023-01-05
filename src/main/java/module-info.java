@@ -17,6 +17,8 @@ module com.fg.footballgames {
 
     opens com.fg.footballgames.User.Controllers to javafx.fxml;
     exports com.fg.footballgames.User.Controllers;
+    exports com.fg.footballgames.DAOs;
+    opens com.fg.footballgames.DAOs to javafx.fxml;
 
 
 }

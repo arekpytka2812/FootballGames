@@ -1,6 +1,8 @@
 package com.fg.footballgames.User;
 
+import com.fg.footballgames.AppComponents.DataBaseConnector;
 import com.fg.footballgames.AppComponents.QueryExecutor;
+import com.fg.footballgames.DAOs.Account;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -11,13 +13,15 @@ import java.lang.Character;
 
 public class UserAuthentication {
 
-    public static UserAccount processLogin(Connection connection, String login, String password){
+    public static Account processLogin(String login, String password){
 
-        UserAccount user = null;
+        Account user = null;
+        Connection connection = null;
 
         try{
-            var statement = connection.createStatement();
+            connection = DataBaseConnector.connect("non_logged_user", "");
 
+            var statement = connection.createStatement();
             var authResult = authenticate(statement, login, password);
 
             if(!assertUser(authResult)){
@@ -45,38 +49,10 @@ public class UserAuthentication {
         return resultSet.next();
     }
 
-    private static UserAccount createUser(ResultSet authResult) throws SQLException{
-        return new UserAccount(authResult.getString("login"), authResult.getString("password"), authResult.getString("fav_club"));
+    private static Account createUser(ResultSet authResult) throws SQLException{
+        return new Account(authResult.getString("login"), authResult.getString("password"), authResult.getString("fav_club"));
     }
 
 
-    public static boolean isValid(String value) {
-        return containsLowerCase(value) &&
-                containsUpperCase(value) &&
-                containsNumber(value) && value.length() > 7;
-    }
 
-    private static boolean containsLowerCase(String value) {
-        for(int i=0;i<value.length();i++){
-            if(Character.isLowerCase(value.charAt(i)))
-              return true;
-        }
-        return false;
-    }
-
-    private static boolean containsUpperCase(String value) {
-        for(int i=0;i<value.length();i++){
-            if(Character.isUpperCase(value.charAt(i)))
-                return true;
-        }
-        return false;
-    }
-
-    private static boolean containsNumber(String value) {
-        for(int i=0;i<value.length();i++){
-            if(Character.isDigit(value.charAt(i)))
-                return true;
-        }
-        return false;
-    }
 }

@@ -1,14 +1,16 @@
 package com.fg.footballgames.AppComponents;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+
 import java.lang.reflect.Field;
 import java.sql.ResultSet;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 public class ResultSetWrapper {
 
-    public static <T> List<T> getResults(ResultSet result, Class<T> classType) throws Exception {
+    public static <T> ObservableList<T> getResults(ResultSet result, Class<T> classType) throws Exception {
         
         Class<T> clazz = classType;
         
@@ -18,7 +20,7 @@ public class ResultSetWrapper {
             field.setAccessible(true);
         }
 
-        List<T> list = new ArrayList<>();
+        ObservableList<T> list = FXCollections.observableArrayList();
 
         while(result.next()){
 

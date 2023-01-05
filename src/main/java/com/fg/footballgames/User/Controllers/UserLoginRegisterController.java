@@ -2,6 +2,7 @@ package com.fg.footballgames.User.Controllers;
 
 
 import com.fg.footballgames.AppComponents.ParentLoader;
+import com.fg.footballgames.AppComponents.PasswordChecker;
 import com.fg.footballgames.User.UserAuthentication;
 
 import com.fg.footballgames.User.UserMain;
@@ -64,7 +65,7 @@ public class UserLoginRegisterController {
     }
 
     public void registerButtonPressed(ActionEvent event){
-        if(UserAuthentication.isValid(passwordField.getText())) {
+        if(PasswordChecker.isValid(passwordField.getText())) {
             errorLabel.setText("");
             stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             stage.setScene(new Scene(ParentLoader.loadParent(UserMain.class, "UserRegisterPage.fxml"), UserMain.WINDOW_HEIGHT, UserMain.WINDOW_WIDTH));
