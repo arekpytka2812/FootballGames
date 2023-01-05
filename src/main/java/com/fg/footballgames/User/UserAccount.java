@@ -1,22 +1,26 @@
 package com.fg.footballgames.User;
 
 public class UserAccount {
-    private String username;
+    private String login;
     private String password;
-    private String favClub;
+    private String fav_club;
 
-    public UserAccount(String username, String password, String favClub){
-        this.username = password;
+    public UserAccount(){
+
+    }
+
+    public UserAccount(String login, String password, String fav_club){
+        this.login = password;
         this.password = password;
-        this.favClub = favClub;
+        this.fav_club = fav_club;
     }
 
-    void setUsername(String username){
-        this.username = username;
+    void setLogin(String login){
+        this.login = login;
     }
 
-    String getUsername(){
-        return this.username;
+    public String getLogin(){
+        return this.login;
     }
 
     void setPassword(String password){
@@ -28,10 +32,10 @@ public class UserAccount {
     }
 
     void setfavClub(String favClub){
-        this.favClub = favClub;
+        this.fav_club = favClub;
     }
 
-    String getFavClub(){
-        return this.favClub;
+    public String getFav_club(){
+        return this.fav_club;
     }
 }

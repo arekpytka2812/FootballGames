@@ -67,7 +67,7 @@ public class UserLoginRegisterController {
         if(UserAuthentication.isValid(passwordField.getText())) {
             errorLabel.setText("");
             stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            stage.setScene(new Scene(ParentLoader.loadParent(UserMain.class, "UserRegisterPage.fxml")));
+            stage.setScene(new Scene(ParentLoader.loadParent(UserMain.class, "UserRegisterPage.fxml"), UserMain.WINDOW_HEIGHT, UserMain.WINDOW_WIDTH));
             stage.show();
         }
         else{

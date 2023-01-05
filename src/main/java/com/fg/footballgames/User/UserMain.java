@@ -8,17 +8,20 @@ import javafx.stage.Stage;
 
 public class UserMain extends Application {
 
+    public final static int WINDOW_HEIGHT = 720;
+    public final static int WINDOW_WIDTH = 1280;
+
     @Override
     public void start(Stage stage) throws Exception {
 
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("UserMainPage.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("UserLoginPage.fxml"));
 
         // TODO change panes so they are relative
 
-        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
-        stage.setTitle("Hello!");
+        Scene scene = new Scene(fxmlLoader.load(), WINDOW_WIDTH, WINDOW_HEIGHT);
+        stage.setTitle("Football Games");
         stage.setScene(scene);
-        stage.setResizable(false);
+
         stage.show();
     }
 
