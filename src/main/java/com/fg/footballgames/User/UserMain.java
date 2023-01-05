@@ -1,5 +1,6 @@
 package com.fg.footballgames.User;
 
+import com.fg.footballgames.AppComponents.AuthAccounts.LoggedUser;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -14,7 +15,7 @@ public class UserMain extends Application {
     @Override
     public void start(Stage stage) throws Exception {
 
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("UserLoginPage.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("UserMainPage.fxml"));
 
         // TODO change panes so they are relative
 
@@ -23,6 +24,15 @@ public class UserMain extends Application {
         stage.setScene(scene);
 
         stage.show();
+
+        stage.setMinWidth(1280);
+        stage.setMinHeight(720);
+
+        stage.setMaxHeight(1080);
+        stage.setMaxWidth(1920);
+
+        var test = LoggedUser.getInstance("debil", "gruzarski");
+
     }
 
     public static void main(String[] args) {

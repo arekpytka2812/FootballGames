@@ -1,23 +1,23 @@
 package com.fg.footballgames.Admin;
 
-import com.fg.footballgames.AppComponents.DataBaseConnector;
-import com.fg.footballgames.AppComponents.ResultSetWrapper;
-import com.fg.footballgames.User.UserAccount;
+import com.fg.footballgames.AppComponents.AuthAccounts.LoggedAdmin;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-import java.sql.Connection;
-import java.util.List;
-
 public class AdminMain extends Application {
+
+    public final static int WINDOW_HEIGHT = 720;
+    public final static int WINDOW_WIDTH = 1280;
 
     @Override
     public void start(Stage stage) throws Exception {
+
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("AdminMainCenter.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 1280, 720);
-        stage.setTitle("Hello!");
+
+        Scene scene = new Scene(fxmlLoader.load(), WINDOW_WIDTH, WINDOW_HEIGHT);
+        stage.setTitle("Football Games Admin App");
         stage.setScene(scene);
         stage.show();
 
@@ -27,17 +27,20 @@ public class AdminMain extends Application {
         stage.setMaxHeight(1080);
         stage.setMaxWidth(1920);
 
-        Connection con = DataBaseConnector.connect("head_admin", "");
+//        Connection con = DataBaseConnector.connect("head_admin", "");
+//
+//        var st = con.createStatement();
+//
+//        var result = st.executeQuery("select * from referees_view;");
 
-        var st = con.createStatement();
+        var test = LoggedAdmin.getInstance("head_admin", "");
+        System.out.println("test");
 
-        var result = st.executeQuery("select * from accounts ORDER BY login DESC;");
+        //List<Referee> accounts = ResultSetWrapper.getResults(result, Referee.class);
 
-        List<UserAccount> accounts = ResultSetWrapper.getResults(result, UserAccount.class);
-
-        for (UserAccount user : accounts){
-            System.out.println("Username: " + user.getLogin() + ", favClub: " + user.getFav_club());
-        }
+//        for (var person : accounts){
+//            System.out.println("Name: " + person.getId_referee() + ", surname: " + person.getPersonal_data_id() + ", date: " + person.getPermissions() );
+//        }
 
     }
 
