@@ -8,20 +8,33 @@ import java.sql.SQLException;
 
 public class AdminAuthentication {
 
-    public static boolean processLogin(String login, String password) throws SQLException{
+    public static boolean processLogin(String login, String password){
 
-        Connection connection = DataBaseConnector.connect(login, password);
-
-        if(connection == null){
-            DataBaseConnector.disconnect(connection);
+        if(LoggedAdmin.isLoggedIn())
             return false;
+
+        Connection connection = null;
+
+        try{
+            connection = DataBaseConnector.connect(login, password);
+
+            if(connection == null){
+                return false;
+            }
+
+            DataBaseConnector.disconnect(connection);
+
+            AdminMain.loggedAdmin = LoggedAdmin.getInstance(login, password);
+
+        }catch(SQLException e){
+            e.printStackTrace();
         }
 
-        DataBaseConnector.disconnect(connection);
-
-        var temp = LoggedAdmin.getInstance(login, password);
-
         return true;
+    }
+
+    public static void processLogout(){
+        LoggedAdmin.removeInstance();
     }
 
 }

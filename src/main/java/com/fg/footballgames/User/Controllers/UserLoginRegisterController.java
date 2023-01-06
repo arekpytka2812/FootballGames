@@ -16,7 +16,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
 
-
 public class UserLoginRegisterController {
 
     @FXML
@@ -45,6 +44,8 @@ public class UserLoginRegisterController {
     @FXML
     private void initialize() {
 
+        // TODO get clubs from database
+
         ObservableList<String> clubList = FXCollections.observableArrayList(
                 "NULL",
                 "GKŁ"
@@ -54,38 +55,56 @@ public class UserLoginRegisterController {
     }
 
 
-    public void loginButtonPressed(ActionEvent event){
+    @FXML
+    private void loginButtonPressed(ActionEvent event){
+
         if(loginField.getText().isEmpty())
             errorLabel.setText("Login cannot be empty!");
         else
             errorLabel.setText("");
 
-        // TODO login process
-        System.out.println("login");
+        if(!UserAuthentication.processLogin(loginField.getText(), passwordField.getText())){
+            errorLabel.setText("Wrong login or password!");
+            return;
+        }
+
+        errorLabel.setText("");
+
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(new Scene(ParentLoader.loadParent(UserMain.class, "UserMainPage.fxml"), UserMain.WINDOW_WIDTH, UserMain.WINDOW_HEIGHT));
+        stage.show();
     }
 
-    public void registerButtonPressed(ActionEvent event){
-        if(PasswordChecker.isValid(passwordField.getText())) {
-            errorLabel.setText("");
-            stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            stage.setScene(new Scene(ParentLoader.loadParent(UserMain.class, "UserRegisterPage.fxml"), UserMain.WINDOW_HEIGHT, UserMain.WINDOW_WIDTH));
-            stage.show();
-        }
-        else{
+    @FXML
+    private void registerButtonPressed(ActionEvent event){
+
+        if(!PasswordChecker.isValid(passwordField.getText())) {
             errorLabel.setText("Password not match requirements!");
         }
+
+        if(!UserAuthentication.processRegister(loginField.getText(), passwordField.getText())){
+            errorLabel.setText("Login is already taken!");
+            return;
+        }
+
+        UserAuthentication.processLogin(loginField.getText(), passwordField.getText());
+
+        errorLabel.setText("");
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(new Scene(ParentLoader.loadParent(UserMain.class, "UserRegisterPage.fxml"), UserMain.WINDOW_WIDTH, UserMain.WINDOW_HEIGHT));
+        stage.show();
 
     }
 
     @FXML
-    protected void chooseButtonPressed(ActionEvent event){
+    private void chooseButtonPressed(ActionEvent event){
 
-        String chosenClub = clubChooser.getValue();
+        if(!clubChooser.getValue().equals("null")){
+            UserAuthentication.updateClub(clubChooser.getValue());
+        }
 
         stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-
-        var scene = new Scene(ParentLoader.loadParent(UserMain.class, "UserLoginPage.fxml"));
-        stage.setScene(scene);
+        stage.setScene(new Scene(ParentLoader.loadParent(UserMain.class, "UserMainPage.fxml"), UserMain.WINDOW_WIDTH, UserMain.WINDOW_HEIGHT));
         stage.show();
     }
 

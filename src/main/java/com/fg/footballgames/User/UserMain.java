@@ -12,10 +12,12 @@ public class UserMain extends Application {
     public final static int WINDOW_HEIGHT = 720;
     public final static int WINDOW_WIDTH = 1280;
 
+    public static LoggedUser loggedUser = null;
+
     @Override
     public void start(Stage stage) throws Exception {
 
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("UserMainPage.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("UserLoginPage.fxml"));
 
         // TODO change panes so they are relative
 
@@ -30,8 +32,6 @@ public class UserMain extends Application {
 
         stage.setMaxHeight(1080);
         stage.setMaxWidth(1920);
-
-        var test = LoggedUser.getInstance("debil", "gruzarski");
 
     }
 
