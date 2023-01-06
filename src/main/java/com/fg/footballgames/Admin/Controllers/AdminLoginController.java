@@ -3,6 +3,7 @@ package com.fg.footballgames.Admin.Controllers;
 import com.fg.footballgames.Admin.AdminAuthentication;
 import com.fg.footballgames.Admin.AdminMain;
 import com.fg.footballgames.AppComponents.ParentLoader;
+import com.fg.footballgames.User.UserMain;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
@@ -27,7 +28,7 @@ public class AdminLoginController {
     @FXML
     Label errorLabel;
 
-    Stage stage;
+    private Stage stage;
 
     @FXML
     private void initialize(){
@@ -47,7 +48,7 @@ public class AdminLoginController {
         errorLabel.setText("");
 
         stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        stage.setScene(new Scene(ParentLoader.loadParent(AdminMain.class, "AdminMainCenter.fxml")));
+        stage.setScene(new Scene(ParentLoader.loadParent(AdminMain.class, "AdminMainPage.fxml"), UserMain.WINDOW_WIDTH, UserMain.WINDOW_HEIGHT));
         stage.show();
     }
 

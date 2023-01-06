@@ -13,7 +13,7 @@
             <AnchorPane prefHeight="27.0" prefWidth="600.0" BorderPane.alignment="CENTER">
                <children>
                   <MenuButton fx:id="viewPicker" layoutX="424.0" layoutY="1.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="170.0" text="View Picker" />
-                  <Button fx:id="accountSettingButton" layoutX="56.0" layoutY="1.0" mnemonicParsing="false" onAction="#accountSettingButtonPressed" text="Account Settings" />
+                  <Button fx:id="accountSettingsButton" layoutX="56.0" layoutY="1.0" mnemonicParsing="false" onAction="#accountSettingsButtonPressed" text="Account Settings" />
                   <Button fx:id="aboutButton" layoutY="1.0" mnemonicParsing="false" onAction="#aboutButtonPressed" text="About" />
                    <Button fx:id="mainPageButton" layoutX="300.0" layoutY="1.0" mnemonicParsing="false" onAction="#mainPageButtonPressed" text="Main Page" />
                   <Button fx:id="logoutButton" onAction="#logoutButtonPressed" layoutX="168.0" layoutY="1.0" mnemonicParsing="false" text="Logout" />

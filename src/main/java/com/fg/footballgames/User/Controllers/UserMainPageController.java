@@ -32,7 +32,7 @@ public class UserMainPageController {
     Button logoutButton;
 
     @FXML
-    Button accountSettingButton;
+    Button accountSettingsButton;
 
     @FXML
     Button aboutButton;
@@ -81,7 +81,7 @@ public class UserMainPageController {
     }
 
     @FXML
-    private void accountSettingButtonPressed(ActionEvent event){
+    private void accountSettingsButtonPressed(ActionEvent event){
         mainPane.setCenter(ParentLoader.loadParent(UserMain.class, "UserAccountSettingsPage.fxml"));
         viewPicker.setText("---");
     }
