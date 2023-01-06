@@ -18,16 +18,12 @@ public class AdminAuthentication {
         try{
             connection = DataBaseConnector.connect(login, password);
 
-            if(connection == null){
-                return false;
-            }
-
             DataBaseConnector.disconnect(connection);
 
             AdminMain.loggedAdmin = LoggedAdmin.getInstance(login, password);
 
         }catch(SQLException e){
-            e.printStackTrace();
+            return false;
         }
 
         return true;
