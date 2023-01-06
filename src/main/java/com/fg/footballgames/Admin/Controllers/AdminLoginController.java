@@ -8,29 +8,46 @@ import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-
-// TODO create admin login page
 
 public class AdminLoginController {
 
     @FXML
+    TextField loginField;
+
+    @FXML
+    PasswordField passwordField;
+
+    @FXML
     Button loginButton;
+
+    @FXML
+    Label errorLabel;
 
     Stage stage;
 
-    public void loginButtonAction(ActionEvent event){
+    @FXML
+    private void initialize(){
+        loginField.clear();
+        passwordField.clear();
+        errorLabel.setText("");
+    }
 
-        // TODO login process
+    @FXML
+    private void loginButtonAction(ActionEvent event){
 
-        String temp1 = "debil", temp2 = "gruzarski";
+        if(!AdminAuthentication.processLogin(loginField.getText(), passwordField.getText())){
+            errorLabel.setText("Wrong login or password!");
+            return;
+        }
 
-        AdminAuthentication.processLogin(temp1, temp2);
+        errorLabel.setText("");
 
         stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-
-        // TODO add admin main page and change it here
-        stage.setScene(new Scene(ParentLoader.loadParent(AdminMain.class, "testPage.fxml")));
+        stage.setScene(new Scene(ParentLoader.loadParent(AdminMain.class, "AdminMainCenter.fxml")));
         stage.show();
     }
 
