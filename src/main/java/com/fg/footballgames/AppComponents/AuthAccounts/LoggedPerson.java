@@ -12,11 +12,11 @@ class LoggedPerson {
         this.conPass = conPass;
     }
 
-    protected String getConLogin(){
+    public String getConLogin(){
         return conLogin;
     }
 
-    protected String getConPass(){
+    public String getConPass(){
         return conPass;
     }
 }

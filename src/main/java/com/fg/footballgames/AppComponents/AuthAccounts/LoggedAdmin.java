@@ -12,4 +12,13 @@ public class LoggedAdmin extends LoggedPerson {
 
         return (LoggedAdmin) loggedPerson;
     }
+
+    public static boolean isLoggedIn(){
+        return loggedPerson != null;
+    }
+
+    public static void removeInstance(){
+        loggedPerson = null;
+    }
+
 }

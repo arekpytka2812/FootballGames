@@ -5,16 +5,12 @@ import javafx.collections.ObservableList;
 
 import java.lang.reflect.Field;
 import java.sql.ResultSet;
-import java.util.Arrays;
-import java.util.List;
 
 public class ResultSetWrapper {
 
     public static <T> ObservableList<T> getResults(ResultSet result, Class<T> classType) throws Exception {
-        
-        Class<T> clazz = classType;
-        
-        List<Field> fields = Arrays.asList(clazz.getDeclaredFields());
+
+        Field[] fields = classType.getDeclaredFields();
 
         for(Field field : fields){
             field.setAccessible(true);
@@ -24,9 +20,10 @@ public class ResultSetWrapper {
 
         while(result.next()){
 
-             T dataTransferObject = clazz.getConstructor().newInstance();
+             T dataTransferObject = classType.getConstructor().newInstance();
 
              for(Field field : fields){
+
                  String name = field.getName();
 
                  String value = result.getString(name);
