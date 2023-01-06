@@ -29,6 +29,8 @@ public class AdminMain extends Application {
 
         stage.setMaxHeight(1080);
         stage.setMaxWidth(1920);
+
+
     }
 
     public static void main(String[] args) {

@@ -20,5 +20,4 @@ public class LoggedAdmin extends LoggedPerson {
     public static void removeInstance(){
         loggedPerson = null;
     }
-
 }
