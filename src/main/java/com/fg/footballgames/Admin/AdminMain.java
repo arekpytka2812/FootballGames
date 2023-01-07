@@ -16,7 +16,7 @@ public class AdminMain extends Application {
     @Override
     public void start(Stage stage) throws Exception {
 
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("AdminLoginPage.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("AdminMainPage.fxml"));
 
         Scene scene = new Scene(fxmlLoader.load(), WINDOW_WIDTH, WINDOW_HEIGHT);
 
@@ -29,7 +29,6 @@ public class AdminMain extends Application {
 
         stage.setMaxHeight(1080);
         stage.setMaxWidth(1920);
-
 
     }
 

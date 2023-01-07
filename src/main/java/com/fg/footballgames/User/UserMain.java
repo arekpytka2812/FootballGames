@@ -1,10 +1,16 @@
 package com.fg.footballgames.User;
 
 import com.fg.footballgames.AppComponents.AuthAccounts.LoggedUser;
+import com.fg.footballgames.AppComponents.DataBaseConnector;
+import com.fg.footballgames.AppComponents.ResultSetWrapper;
+import com.fg.footballgames.DAOs.Views.GoalsDifference;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+
+import java.sql.Connection;
+import java.sql.SQLException;
 
 
 public class UserMain extends Application {
@@ -32,6 +38,7 @@ public class UserMain extends Application {
 
         stage.setMaxHeight(1080);
         stage.setMaxWidth(1920);
+
 
     }
 

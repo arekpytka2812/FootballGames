@@ -6,7 +6,7 @@ public class LoggedUser extends LoggedPerson {
 
     private LoggedUser(String username){
 
-        super("logged_user", "");
+        super("user", "");
 
         this.username = username;
     }
