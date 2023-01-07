@@ -18,23 +18,11 @@ public class RefereeView {
         return NAME;
     }
 
-    public void setNAME(String NAME) {
-        this.NAME = NAME;
-    }
-
     public String getSURNAME() {
         return SURNAME;
     }
 
-    public void setSURNAME(String SURNAME) {
-        this.SURNAME = SURNAME;
-    }
-
     public String getPermissions() {
         return permissions;
-    }
-
-    public void setPermissions(String permissions) {
-        this.permissions = permissions;
     }
 }

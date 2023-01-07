@@ -8,7 +8,7 @@ import java.sql.ResultSet;
 
 public class ResultSetWrapper {
 
-    public static <T> ObservableList<T> getResults(ResultSet result, Class<T> classType) throws Exception {
+    public static <T> ObservableList<T> resultSetToObservableList(ResultSet result, Class<T> classType) throws Exception {
 
         Field[] fields = classType.getDeclaredFields();
 

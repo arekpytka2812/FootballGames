@@ -20,31 +20,15 @@ public class PlayersView {
         return NAME;
     }
 
-    public void setNAME(String NAME) {
-        this.NAME = NAME;
-    }
-
     public String getSURNAME() {
         return SURNAME;
-    }
-
-    public void setSURNAME(String SURNAME) {
-        this.SURNAME = SURNAME;
     }
 
     public String getCLUB() {
         return CLUB;
     }
 
-    public void setCLUB(String CLUB) {
-        this.CLUB = CLUB;
-    }
-
     public String getPOSITION() {
         return POSITION;
-    }
-
-    public void setPOSITION(String POSITION) {
-        this.POSITION = POSITION;
     }
 }

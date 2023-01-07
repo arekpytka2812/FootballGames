@@ -1,4 +1,4 @@
-package com.fg.footballgames.DAOs;
+package com.fg.footballgames.DAOs.Tables;
 public class Suspension {
     private String id_suspension;
     private String player_id;

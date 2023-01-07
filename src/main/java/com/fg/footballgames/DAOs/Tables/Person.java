@@ -1,4 +1,4 @@
-package com.fg.footballgames.DAOs;
+package com.fg.footballgames.DAOs.Tables;
 
 import java.util.Date;
 

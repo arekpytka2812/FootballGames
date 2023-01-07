@@ -85,7 +85,7 @@ public class UserAuthentication {
     }
 
     private static int registerNewUser(Statement statement, String username, String password) throws SQLException{
-        return statement.executeUpdate("INSERT INTO accounts VALUES('" + username + "', SHA2('" + password + "', 256), 'null')");
+        return statement.executeUpdate("INSERT INTO accounts VALUES('" + username + "', SHA2('" + password + "', 256), NULL)");
     }
 
     public static boolean updateClub(String newFavClub){

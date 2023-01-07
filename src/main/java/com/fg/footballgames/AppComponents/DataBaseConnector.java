@@ -6,7 +6,7 @@ import java.sql.SQLException;
 
 public class DataBaseConnector {
 
-    private static final String url = "jdbc:mysql://localhost:3306/football_games";
+    private static final String url = "jdbc:mysql://localhost:3306/liga_moja";
 
     public static Connection connect(String userName, String password) throws SQLException{
         return DriverManager.getConnection(url, userName, password);
