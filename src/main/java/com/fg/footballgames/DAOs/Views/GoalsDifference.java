@@ -18,23 +18,11 @@ public class GoalsDifference{
         return CLUB;
     }
 
-    public void setCLUB(String CLUB) {
-        this.CLUB = CLUB;
-    }
-
     public String getGOALS_SCORED() {
         return GOALS_SCORED;
     }
 
-    public void setGOALS_SCORED(String GOALS_SCORED) {
-        this.GOALS_SCORED = GOALS_SCORED;
-    }
-
     public String getGOALS_CONCEDED() {
         return GOALS_CONCEDED;
-    }
-
-    public void setGOALS_CONCEDED(String GOALS_CONCEDED) {
-        this.GOALS_CONCEDED = GOALS_CONCEDED;
     }
 }

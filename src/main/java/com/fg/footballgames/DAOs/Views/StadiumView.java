@@ -26,55 +26,27 @@ public class StadiumView {
         return NAME;
     }
 
-    public void setNAME(String NAME) {
-        this.NAME = NAME;
-    }
-
     public String getCAPACITY() {
         return CAPACITY;
-    }
-
-    public void setCAPACITY(String CAPACITY) {
-        this.CAPACITY = CAPACITY;
     }
 
     public String getCITY() {
         return CITY;
     }
 
-    public void setCITY(String CITY) {
-        this.CITY = CITY;
-    }
-
     public String getADDRESS() {
         return ADDRESS;
-    }
-
-    public void setADDRESS(String ADDRESS) {
-        this.ADDRESS = ADDRESS;
     }
 
     public String getPITCH_LENGTH() {
         return PITCH_LENGTH;
     }
 
-    public void setPITCH_LENGTH(String PITCH_LENGTH) {
-        this.PITCH_LENGTH = PITCH_LENGTH;
-    }
-
     public String getPITCH_WIDTH() {
         return PITCH_WIDTH;
     }
 
-    public void setPITCH_WIDTH(String PITCH_WIDTH) {
-        this.PITCH_WIDTH = PITCH_WIDTH;
-    }
-
     public String getYEAR_OF_BUILT() {
         return YEAR_OF_BUILT;
-    }
-
-    public void setYEAR_OF_BUILT(String YEAR_OF_BUILT) {
-        this.YEAR_OF_BUILT = YEAR_OF_BUILT;
     }
 }

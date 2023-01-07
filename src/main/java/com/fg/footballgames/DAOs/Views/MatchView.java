@@ -26,55 +26,27 @@ public class MatchView {
         return HOST;
     }
 
-    public void setHOST(String HOST) {
-        this.HOST = HOST;
-    }
-
     public String getGUEST() {
         return GUEST;
-    }
-
-    public void setGUEST(String GUEST) {
-        this.GUEST = GUEST;
     }
 
     public String getHOST_GOALS() {
         return HOST_GOALS;
     }
 
-    public void setHOST_GOALS(String HOST_GOALS) {
-        this.HOST_GOALS = HOST_GOALS;
-    }
-
     public String getGUEST_GOALS() {
         return GUEST_GOALS;
-    }
-
-    public void setGUEST_GOALS(String GUEST_GOALS) {
-        this.GUEST_GOALS = GUEST_GOALS;
     }
 
     public String getSTADIUM() {
         return STADIUM;
     }
 
-    public void setSTADIUM(String STADIUM) {
-        this.STADIUM = STADIUM;
-    }
-
     public String getDATE() {
         return DATE;
     }
 
-    public void setDATE(String DATE) {
-        this.DATE = DATE;
-    }
-
     public String getREFEREE() {
         return REFEREE;
-    }
-
-    public void setREFEREE(String REFEREE) {
-        this.REFEREE = REFEREE;
     }
 }

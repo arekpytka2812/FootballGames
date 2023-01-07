@@ -1,4 +1,4 @@
-package com.fg.footballgames.DAOs;
+package com.fg.footballgames.DAOs.Tables;
 
 // TODO change database wnums to code enums??
 // don't know if it will work

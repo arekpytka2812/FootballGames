@@ -22,39 +22,19 @@ public class CoachView{
         return NAME;
     }
 
-    public void setNAME(String NAME) {
-        this.NAME = NAME;
-    }
-
     public String getSURNAME() {
         return SURNAME;
-    }
-
-    public void setSURNAME(String SURNAME) {
-        this.SURNAME = SURNAME;
     }
 
     public String getCLUB() {
         return CLUB;
     }
 
-    public void setCLUB(String CLUB) {
-        this.CLUB = CLUB;
-    }
-
     public String getPERMISSIONS() {
         return PERMISSIONS;
     }
 
-    public void setPERMISSIONS(String PERMISSIONS) {
-        this.PERMISSIONS = PERMISSIONS;
-    }
-
     public String getROLE() {
         return ROLE;
-    }
-
-    public void setROLE(String ROLE) {
-        this.ROLE = ROLE;
     }
 }

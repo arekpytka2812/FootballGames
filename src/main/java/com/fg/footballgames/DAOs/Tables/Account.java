@@ -1,4 +1,4 @@
-package com.fg.footballgames.DAOs;
+package com.fg.footballgames.DAOs.Tables;
 
 public class Account {
     private String login;
@@ -27,7 +27,7 @@ public class Account {
         this.password = password;
     }
 
-    String getPassword(){
+    public String getPassword(){
         return this.password;
     }
 

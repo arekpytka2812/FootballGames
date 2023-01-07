@@ -18,23 +18,11 @@ public class MainStandingsView {
         return CLUB;
     }
 
-    public void setCLUB(String CLUB) {
-        this.CLUB = CLUB;
-    }
-
     public String getPOINTS() {
         return POINTS;
     }
 
-    public void setPOINTS(String POINTS) {
-        this.POINTS = POINTS;
-    }
-
     public String getGOAL_DIFFERENCE() {
         return GOAL_DIFFERENCE;
-    }
-
-    public void setGOAL_DIFFERENCE(String GOAL_DIFFERENCE) {
-        this.GOAL_DIFFERENCE = GOAL_DIFFERENCE;
     }
 }
