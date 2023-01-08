@@ -1,5 +1,13 @@
 package com.fg.footballgames.User.Controllers;
 
+import com.fg.footballgames.Admin.AdminMain;
+import com.fg.footballgames.AppComponents.*;
+import com.fg.footballgames.AppComponents.AuthAccounts.LoggedAdmin;
+import com.fg.footballgames.AppComponents.AuthAccounts.LoggedUser;
+import com.fg.footballgames.DAOs.Tables.Personal_data;
+import com.fg.footballgames.DAOs.Views.ClubView;
+import com.fg.footballgames.User.UserAuthentication;
+import com.fg.footballgames.User.UserMain;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -7,6 +15,9 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.PasswordField;
+
+import java.sql.Connection;
+import java.sql.SQLException;
 
 public class UserAccountSettingsPage {
 
@@ -30,25 +41,47 @@ public class UserAccountSettingsPage {
 
     @FXML
     private void initialize(){
-        // TODO query on club list and pass it into clubList
-
-        ObservableList<String> clubList = FXCollections.observableArrayList(
-                "NULL",
-                "GKŁ"
-        );
-
-        favClubChooser.setItems(clubList);
+        try{
+            Connection con = DataBaseConnector.connect("user", "");
+            var st = con.createStatement();
+            ObservableList<String> listInstance = FXCollections.observableArrayList();
+            var res = st.executeQuery("SELECT * FROM clubs_view");
+            while(res.next())
+                listInstance.add(res.getString(1));
+            favClubChooser.setItems(listInstance);
+            con.close();
+        }catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML
     private void savePasswordButtonPressed(ActionEvent event){
-        // TODO query to check if old password is valid
+        Connection connection = null;
+        String old_pass = null;
+        String comp_pass = null;
+        try {
+            connection = DataBaseConnector.connect("user", "");
 
-        if(firstNewPasswordField.getText() != null &&
-                firstNewPasswordField.getText().equals(secondNewPasswordField.getText())){
-            // TODO update query on user
+            var statement = connection.createStatement();
+            var authResult = UserAuthentication.authenticate(statement, UserMain.loggedUser.getUsername(), oldPasswordField.getText());
 
+            old_pass = authResult.getString("password");
+
+            var passResult = statement.executeQuery("select sha2('" + oldPasswordField.getText() + "',256)");
+
+            comp_pass = passResult.getString(0);
+            DataBaseConnector.disconnect(connection);
+
+        }catch (SQLException e){
+            e.printStackTrace();
         }
+        if(PasswordChecker.isValid(firstNewPasswordField.getText()) && !oldPasswordField.getText().equals(firstNewPasswordField.getText()) &&
+                firstNewPasswordField.getText().equals(secondNewPasswordField.getText()) && old_pass == comp_pass){
+
+                UserAuthentication.updatePassword(firstNewPasswordField.getText());
+        }
+
 
         oldPasswordField.clear();
         firstNewPasswordField.clear();
@@ -58,7 +91,6 @@ public class UserAccountSettingsPage {
     @FXML
     private void saveClubButtonPressed(ActionEvent event){
         String chosenClub = favClubChooser.getValue();
-
-        // TODO update query on user club
+        UserAuthentication.updateClub(chosenClub);
     }
 }
