@@ -1,11 +1,21 @@
 package com.fg.footballgames.DAOs.Tables;
-public class Suspension {
+
+import com.fg.footballgames.DAOs.IDaoModel;
+
+public class Suspension implements IDaoModel {
+
     private String id_suspension;
     private String player_id;
     private String club_id;
     private String type;
     private String received_match;
     private String return_match;
+
+    @Override
+    public String[] getAll(){
+        return new String[]{id_suspension, player_id, club_id, type, received_match, return_match};
+    }
+
     public Suspension() {
     }
     public Suspension(String id_suspension, String player_id, String club_id, String type, String received_match, String return_match) {

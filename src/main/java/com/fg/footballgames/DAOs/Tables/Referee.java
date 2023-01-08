@@ -1,10 +1,17 @@
 package com.fg.footballgames.DAOs.Tables;
 
-public class Referee{
+import com.fg.footballgames.DAOs.IDaoModel;
+
+public class Referee implements IDaoModel {
 
     private String id_referee;
     private String personal_data_id;
     private String permissions;
+
+    @Override
+    public String[] getAll(){
+        return new String[]{id_referee, personal_data_id, permissions};
+    }
 
     public Referee(){
 

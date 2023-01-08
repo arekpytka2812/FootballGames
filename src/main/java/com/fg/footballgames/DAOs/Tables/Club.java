@@ -1,14 +1,24 @@
 package com.fg.footballgames.DAOs.Tables;
 
-public class Club {
+import com.fg.footballgames.DAOs.IDaoModel;
+
+public class Club implements IDaoModel {
+
     private String id_club;
     private String name;
     private String city;
     private String stadium;
     private String year_founded;
+
+    @Override
+    public String[] getAll(){
+        return new String[]{id_club, name, city, stadium, year_founded};
+    }
+
     public Club(){
 
     }
+
     public Club(String id_club, String name, String city, String stadium, String year_founded) {
         this.id_club = id_club;
         this.name = name;

@@ -1,8 +1,8 @@
 package com.fg.footballgames.DAOs.Tables;
 
-import java.util.Date;
+import com.fg.footballgames.DAOs.IDaoModel;
 
-public class Person {
+public class Personal_data implements IDaoModel {
 
     private String id_person;
     private String name;
@@ -10,11 +10,16 @@ public class Person {
     private String year_of_birth;
     private String nationality;
 
-    public Person(){
+    @Override
+    public String[] getAll(){
+        return new String[]{id_person, name, surname, year_of_birth, nationality};
+    }
+
+    public Personal_data(){
 
     }
 
-    public Person(String id_person, String name, String surname, String year_of_birth, String nationality) {
+    public Personal_data(String id_person, String name, String surname, String year_of_birth, String nationality) {
         this.id_person = id_person;
         this.name = name;
         this.surname = surname;

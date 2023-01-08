@@ -3,12 +3,19 @@ package com.fg.footballgames.DAOs.Tables;
 // TODO change database wnums to code enums??
 // don't know if it will work
 
-public class Coach {
+import com.fg.footballgames.DAOs.IDaoModel;
+
+public class Coach implements IDaoModel {
     private String id_coach;
     private String personal_data_id;
     private String club_id;
     private String permissions;
     private String role;
+
+    @Override
+    public String[] getAll(){
+        return new String[]{id_coach, personal_data_id, club_id, permissions,role};
+    }
 
     public Coach(){
 
