@@ -40,7 +40,7 @@ public class UserAuthentication {
         return true;
     }
 
-    private static ResultSet authenticate(Statement statement, String login, String password) throws SQLException{
+    public static ResultSet authenticate(Statement statement, String login, String password) throws SQLException{
 
         String query = QueryExecutor.buildPasswordCheckQuery("*", "accounts", login, password);
 
@@ -101,6 +101,27 @@ public class UserAuthentication {
             var statement = connection.createStatement();
 
             statement.executeUpdate("UPDATE accounts SET fav_club = '" + newFavClub + "' WHERE login = '" + UserMain.loggedUser.getUsername() + "'");
+
+            DataBaseConnector.disconnect(connection);
+
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
+
+        return true;
+    }
+    public static boolean updatePassword(String newPassword){
+        if(!LoggedUser.isLoggedIn())
+            return false;
+
+        Connection connection = null;
+
+        try {
+            connection = DataBaseConnector.connect(UserMain.loggedUser.getConLogin(), UserMain.loggedUser.getConPass());
+
+            var statement = connection.createStatement();
+
+            statement.executeUpdate("UPDATE accounts SET password = SHA2('" + newPassword + "',256) WHERE login = '" + UserMain.loggedUser.getUsername() + "'");
 
             DataBaseConnector.disconnect(connection);
 

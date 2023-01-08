@@ -2,7 +2,7 @@ package com.fg.footballgames.DAOs.Tables;
 
 import com.fg.footballgames.DAOs.IDaoModel;
 
-public class Suspension implements IDaoModel {
+public class Suspensions implements IDaoModel {
 
     private String id_suspension;
     private String player_id;
@@ -16,9 +16,9 @@ public class Suspension implements IDaoModel {
         return new String[]{id_suspension, player_id, club_id, type, received_match, return_match};
     }
 
-    public Suspension() {
+    public Suspensions() {
     }
-    public Suspension(String id_suspension, String player_id, String club_id, String type, String received_match, String return_match) {
+    public Suspensions(String id_suspension, String player_id, String club_id, String type, String received_match, String return_match) {
         this.id_suspension = id_suspension;
         this.player_id = player_id;
         this.club_id = club_id;

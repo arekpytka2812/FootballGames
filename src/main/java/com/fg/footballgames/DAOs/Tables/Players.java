@@ -2,7 +2,7 @@ package com.fg.footballgames.DAOs.Tables;
 
 import com.fg.footballgames.DAOs.IDaoModel;
 
-public class Player implements IDaoModel {
+public class Players implements IDaoModel {
 
     private String id_player;
     private String personal_data_id;
@@ -14,11 +14,11 @@ public class Player implements IDaoModel {
         return new String[]{id_player, personal_data_id, club, position};
     }
 
-    public Player(){
+    public Players(){
 
     }
 
-    public Player(String id_player, String personal_data_id, String club, String position) {
+    public Players(String id_player, String personal_data_id, String club, String position) {
         this.id_player = id_player;
         this.personal_data_id = personal_data_id;
         this.club = club;

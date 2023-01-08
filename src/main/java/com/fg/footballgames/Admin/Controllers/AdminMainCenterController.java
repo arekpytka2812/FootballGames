@@ -23,6 +23,9 @@ public class AdminMainCenterController {
     @FXML
     Button insertButton;
 
+    @FXML
+    Button updateButton;
+
     ObservableList<? extends IDaoModel> modelsList;
 
     @FXML
@@ -70,6 +73,10 @@ public class AdminMainCenterController {
         }catch (Exception e) {
             e.printStackTrace();
         }
+    }
+    @FXML
+    private void updateButtonPressed(ActionEvent event){
+
     }
 }
 
