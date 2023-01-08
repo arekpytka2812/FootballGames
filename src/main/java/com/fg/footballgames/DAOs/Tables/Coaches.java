@@ -1,11 +1,11 @@
 package com.fg.footballgames.DAOs.Tables;
 
-// TODO change database wnums to code enums??
+// TODO change database enums to code enums??
 // don't know if it will work
 
 import com.fg.footballgames.DAOs.IDaoModel;
 
-public class Coach implements IDaoModel {
+public class Coaches implements IDaoModel {
     private String id_coach;
     private String personal_data_id;
     private String club_id;
@@ -17,11 +17,11 @@ public class Coach implements IDaoModel {
         return new String[]{id_coach, personal_data_id, club_id, permissions,role};
     }
 
-    public Coach(){
+    public Coaches(){
 
     }
 
-    public Coach(String id_coach, String personal_data_id, String club_id, String permissions, String role) {
+    public Coaches(String id_coach, String personal_data_id, String club_id, String permissions, String role) {
         this.id_coach = id_coach;
         this.personal_data_id = personal_data_id;
         this.club_id = club_id;

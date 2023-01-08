@@ -2,7 +2,7 @@ package com.fg.footballgames.DAOs.Tables;
 
 import com.fg.footballgames.DAOs.IDaoModel;
 
-public class Account implements IDaoModel {
+public class Accounts implements IDaoModel {
 
     private String login;
     private String password;
@@ -13,11 +13,11 @@ public class Account implements IDaoModel {
         return new String[]{login, password, fav_club};
     }
 
-    public Account(){
+    public Accounts(){
 
     }
 
-    public Account(String login, String password, String fav_club){
+    public Accounts(String login, String password, String fav_club){
         this.login = password;
         this.password = password;
         this.fav_club = fav_club;

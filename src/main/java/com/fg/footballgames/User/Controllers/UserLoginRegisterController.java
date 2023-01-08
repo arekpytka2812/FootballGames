@@ -1,6 +1,7 @@
 package com.fg.footballgames.User.Controllers;
 
 
+import com.fg.footballgames.AppComponents.DataBaseConnector;
 import com.fg.footballgames.AppComponents.ParentLoader;
 import com.fg.footballgames.AppComponents.PasswordChecker;
 import com.fg.footballgames.User.UserAuthentication;
@@ -15,6 +16,8 @@ import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
+
+import java.sql.Connection;
 
 public class UserLoginRegisterController {
 
@@ -44,14 +47,18 @@ public class UserLoginRegisterController {
     @FXML
     private void initialize() {
 
-        // TODO get clubs from database
-
-        ObservableList<String> clubList = FXCollections.observableArrayList(
-                "NULL",
-                "GKŁ"
-        );
-
-        clubChooser.setItems(clubList);
+        try{
+            Connection con = DataBaseConnector.connect("user", "");
+            var st = con.createStatement();
+            ObservableList<String> listInstance = FXCollections.observableArrayList();
+            var res = st.executeQuery("SELECT * FROM clubs_view");
+            while(res.next())
+                listInstance.add(res.getString(1));
+            clubChooser.setItems(listInstance);
+            con.close();
+        }catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
 

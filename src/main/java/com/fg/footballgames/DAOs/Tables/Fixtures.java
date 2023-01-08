@@ -2,7 +2,7 @@ package com.fg.footballgames.DAOs.Tables;
 
 import com.fg.footballgames.DAOs.IDaoModel;
 
-public class Match implements IDaoModel {
+public class Fixtures implements IDaoModel {
 
     private String id_match;
     private String host;
@@ -18,10 +18,10 @@ public class Match implements IDaoModel {
         return new String[]{id_match, host, guest, host_goals, guest_goals, stadium, referee, date};
     }
 
-    public Match(){
+    public Fixtures(){
 
     }
-    public Match(String id_match, String host, String guest, String host_goals, String guest_goals, String stadium, String referee, String date){
+    public Fixtures(String id_match, String host, String guest, String host_goals, String guest_goals, String stadium, String referee, String date){
         this.id_match = id_match;
         this.host = host;
         this.guest = guest;
