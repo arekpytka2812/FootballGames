@@ -1,11 +1,18 @@
 package com.fg.footballgames.DAOs.Tables;
 
-public class Player {
+import com.fg.footballgames.DAOs.IDaoModel;
+
+public class Player implements IDaoModel {
 
     private String id_player;
     private String personal_data_id;
     private String club;
     private String position;
+
+    @Override
+    public String[] getAll(){
+        return new String[]{id_player, personal_data_id, club, position};
+    }
 
     public Player(){
 

@@ -1,6 +1,8 @@
 package com.fg.footballgames.DAOs.Tables;
 
-public class Stadium {
+import com.fg.footballgames.DAOs.IDaoModel;
+
+public class Stadium implements IDaoModel {
 
     private String id_stadium;
     private String name;
@@ -10,6 +12,11 @@ public class Stadium {
     private String pitch_length;
     private String pitch_width;
     private String year_of_built;
+
+    @Override
+    public String[] getAll(){
+        return new String[]{id_stadium, name, capacity, city, address, pitch_length, pitch_width, year_of_built};
+    }
 
     public Stadium(){
 

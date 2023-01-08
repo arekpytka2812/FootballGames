@@ -1,9 +1,17 @@
 package com.fg.footballgames.DAOs.Tables;
 
-public class Account {
+import com.fg.footballgames.DAOs.IDaoModel;
+
+public class Account implements IDaoModel {
+
     private String login;
     private String password;
     private String fav_club;
+
+    @Override
+    public String[] getAll(){
+        return new String[]{login, password, fav_club};
+    }
 
     public Account(){
 
