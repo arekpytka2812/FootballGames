@@ -1,6 +1,8 @@
 package com.fg.footballgames.DAOs.Tables;
 
-public class Match {
+import com.fg.footballgames.DAOs.IDaoModel;
+
+public class Match implements IDaoModel {
 
     private String id_match;
     private String host;
@@ -10,6 +12,11 @@ public class Match {
     private String stadium;
     private String referee;
     private String date;
+
+    @Override
+    public String[] getAll(){
+        return new String[]{id_match, host, guest, host_goals, guest_goals, stadium, referee, date};
+    }
 
     public Match(){
 
