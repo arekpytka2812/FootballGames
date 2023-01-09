@@ -17,8 +17,6 @@ public class TableViewWrapper {
 
         for(Field field : fields){
 
-            field.setAccessible(true);
-
             tableColumnList.add(new TableColumn<>(field.getName()));
 
             tableColumnList.get(tableColumnList.size() - 1).setCellValueFactory((

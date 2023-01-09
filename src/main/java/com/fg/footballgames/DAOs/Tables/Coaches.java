@@ -3,9 +3,10 @@ package com.fg.footballgames.DAOs.Tables;
 // TODO change database enums to code enums??
 // don't know if it will work
 
-import com.fg.footballgames.DAOs.IDaoModel;
+import com.fg.footballgames.DAOs.IDaoTableModel;
 
-public class Coaches implements IDaoModel {
+public class Coaches implements IDaoTableModel {
+
     private String id_coach;
     private String personal_data_id;
     private String club_id;

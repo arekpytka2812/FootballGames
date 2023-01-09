@@ -1,8 +1,8 @@
 package com.fg.footballgames.DAOs.Tables;
 
-import com.fg.footballgames.DAOs.IDaoModel;
+import com.fg.footballgames.DAOs.IDaoTableModel;
 
-public class Accounts implements IDaoModel {
+public class Accounts implements IDaoTableModel {
 
     private String login;
     private String password;

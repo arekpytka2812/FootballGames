@@ -34,26 +34,33 @@ public class UserAuthentication {
             DataBaseConnector.disconnect(connection);
 
         }catch (SQLException e){
-            e.printStackTrace();
+            return false;
         }
 
         return true;
     }
 
-    public static ResultSet authenticate(Statement statement, String login, String password) throws SQLException{
+
+
+    private static ResultSet authenticate(Statement statement, String login, String password) throws SQLException{
 
         String query = QueryExecutor.buildPasswordCheckQuery("*", "accounts", login, password);
 
         return statement.executeQuery(query);
     }
 
+
+
     private static boolean assertUser(ResultSet resultSet) throws SQLException{
         return resultSet.next();
     }
 
+
     public static void processLogout() {
         LoggedUser.removeInstance();
     }
+
+
 
     public static boolean processRegister(String username, String password){
 
@@ -78,15 +85,18 @@ public class UserAuthentication {
             DataBaseConnector.disconnect(connection);
 
         }catch (SQLException e){
-            e.printStackTrace();
+            return false;
         }
 
         return true;
     }
 
+
+
     private static int registerNewUser(Statement statement, String username, String password) throws SQLException{
         return statement.executeUpdate("INSERT INTO accounts VALUES('" + username + "', SHA2('" + password + "', 256), NULL)");
     }
+
 
     public static boolean updateClub(String newFavClub){
 
@@ -100,7 +110,12 @@ public class UserAuthentication {
 
             var statement = connection.createStatement();
 
-            statement.executeUpdate("UPDATE accounts SET fav_club = '" + newFavClub + "' WHERE login = '" + UserMain.loggedUser.getUsername() + "'");
+            if(newFavClub.equals("NULL")){
+                statement.executeUpdate("UPDATE accounts SET fav_club = " + newFavClub + " WHERE login = '" + UserMain.loggedUser.getUsername() + "'");
+            }
+            else{
+                statement.executeUpdate("UPDATE accounts SET fav_club = '" + newFavClub + "' WHERE login = '" + UserMain.loggedUser.getUsername() + "'");
+            }
 
             DataBaseConnector.disconnect(connection);
 
@@ -110,9 +125,17 @@ public class UserAuthentication {
 
         return true;
     }
-    public static boolean updatePassword(String newPassword){
+
+
+
+    public static boolean updatePassword(String oldPassword, String newPassword){
+
         if(!LoggedUser.isLoggedIn())
             return false;
+
+        if(!checkOldPassword(oldPassword)){
+            return false;
+        }
 
         Connection connection = null;
 
@@ -120,15 +143,44 @@ public class UserAuthentication {
             connection = DataBaseConnector.connect(UserMain.loggedUser.getConLogin(), UserMain.loggedUser.getConPass());
 
             var statement = connection.createStatement();
-
             statement.executeUpdate("UPDATE accounts SET password = SHA2('" + newPassword + "',256) WHERE login = '" + UserMain.loggedUser.getUsername() + "'");
 
             DataBaseConnector.disconnect(connection);
 
         }catch (SQLException e){
-            e.printStackTrace();
+            return false;
         }
 
         return true;
+    }
+
+    private static boolean checkOldPassword(String oldPassword){
+
+        Connection connection = null;
+
+        try {
+            connection = DataBaseConnector.connect(UserMain.loggedUser.getConLogin(), UserMain.loggedUser.getConPass());
+
+            var statement = connection.createStatement();
+            var authResult = statement.executeQuery("SELECT * from accounts WHERE login = '" + UserMain.loggedUser.getUsername() + "'");
+
+            if (!authResult.next()) {
+                return false;
+            }
+
+            var old_pass = authResult.getString("password");
+
+            var passResult = statement.executeQuery("select sha2('" + oldPassword + "',256)");
+
+            passResult.next();
+            var comp_pass = passResult.getString(1);
+
+            DataBaseConnector.disconnect(connection);
+
+            return comp_pass.equals(old_pass);
+
+        }catch(SQLException e){
+            return false;
+        }
     }
 }

@@ -24,12 +24,12 @@ public class PasswordChecker {
             }
 
             if(Character.isUpperCase(value.charAt(i))){
-                containsLowerCase = true;
+                containsUpperCase = true;
                 continue;
             }
 
             if(Character.isDigit(value.charAt(i))){
-                containsLowerCase = true;
+                containsNumber = true;
             }
         }
 
