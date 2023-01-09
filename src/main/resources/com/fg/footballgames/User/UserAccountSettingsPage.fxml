@@ -16,6 +16,7 @@
        <Label alignment="CENTER" layoutX="2.0" layoutY="64.0" prefHeight="17.0" prefWidth="125.0" text="Type old password:" />
        <Label alignment="CENTER" layoutX="5.0" layoutY="146.0" prefHeight="17.0" prefWidth="125.0" text="Type new password:" />
        <Label alignment="CENTER" layoutX="5.0" layoutY="201.0" prefHeight="25.0" prefWidth="125.0" text="Confirm new password:" />
+       <Label fx:id="errorLabel" alignment="CENTER" layoutX="8.0" layoutY="278.0" prefHeight="18.0" prefWidth="582.0" text=" " textFill="RED" />
 
        <Button fx:id="savePasswordButton" layoutX="118.0" layoutY="291.0" mnemonicParsing="false" onAction="#savePasswordButtonPressed" text="Save password" />
 

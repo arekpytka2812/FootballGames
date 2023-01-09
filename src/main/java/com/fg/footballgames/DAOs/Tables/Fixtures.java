@@ -1,8 +1,8 @@
 package com.fg.footballgames.DAOs.Tables;
 
-import com.fg.footballgames.DAOs.IDaoModel;
+import com.fg.footballgames.DAOs.IDaoTableModel;
 
-public class Fixtures implements IDaoModel {
+public class Fixtures implements IDaoTableModel {
 
     private String id_match;
     private String host;

@@ -1,8 +1,8 @@
 package com.fg.footballgames.DAOs.Tables;
 
-import com.fg.footballgames.DAOs.IDaoModel;
+import com.fg.footballgames.DAOs.IDaoTableModel;
 
-public class Referees implements IDaoModel {
+public class Referees implements IDaoTableModel {
 
     private String id_referee;
     private String personal_data_id;

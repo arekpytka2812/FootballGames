@@ -1,8 +1,8 @@
 package com.fg.footballgames.DAOs.Tables;
 
-import com.fg.footballgames.DAOs.IDaoModel;
+import com.fg.footballgames.DAOs.IDaoTableModel;
 
-public class Suspensions implements IDaoModel {
+public class Suspensions implements IDaoTableModel {
 
     private String id_suspension;
     private String player_id;
