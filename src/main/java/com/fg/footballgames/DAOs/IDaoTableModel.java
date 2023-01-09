@@ -1,6 +1,6 @@
 package com.fg.footballgames.DAOs;
 
-public interface IDaoModel {
+public interface IDaoTableModel {
 
     public String[] getAll();
 }

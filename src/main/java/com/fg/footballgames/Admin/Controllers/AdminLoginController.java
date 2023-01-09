@@ -3,7 +3,6 @@ package com.fg.footballgames.Admin.Controllers;
 import com.fg.footballgames.Admin.AdminAuthentication;
 import com.fg.footballgames.Admin.AdminMain;
 import com.fg.footballgames.AppComponents.ParentLoader;
-import com.fg.footballgames.User.UserMain;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
@@ -35,6 +34,8 @@ public class AdminLoginController {
         loginField.clear();
         passwordField.clear();
         errorLabel.setText("");
+
+        loginButton.setDefaultButton(true);
     }
 
     @FXML
@@ -48,7 +49,7 @@ public class AdminLoginController {
         errorLabel.setText("");
 
         stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        stage.setScene(new Scene(ParentLoader.loadParent(AdminMain.class, "AdminMainPage.fxml"), UserMain.WINDOW_WIDTH, UserMain.WINDOW_HEIGHT));
+        stage.setScene(new Scene(ParentLoader.loadParent(AdminMain.class, "AdminMainPage.fxml"), AdminMain.WINDOW_WIDTH, AdminMain.WINDOW_HEIGHT));
         stage.show();
     }
 

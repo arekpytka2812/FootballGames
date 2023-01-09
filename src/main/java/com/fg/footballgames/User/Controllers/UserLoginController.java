@@ -1,25 +1,22 @@
 package com.fg.footballgames.User.Controllers;
 
-
-import com.fg.footballgames.AppComponents.DataBaseConnector;
 import com.fg.footballgames.AppComponents.ParentLoader;
 import com.fg.footballgames.AppComponents.PasswordChecker;
 import com.fg.footballgames.User.UserAuthentication;
 
 import com.fg.footballgames.User.UserMain;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+
 import javafx.stage.Stage;
 
-import java.sql.Connection;
 
-public class UserLoginRegisterController {
+public class UserLoginController {
 
     @FXML
     TextField loginField;
@@ -34,12 +31,6 @@ public class UserLoginRegisterController {
     Button registerButton;
 
     @FXML
-    ComboBox<String> clubChooser = new ComboBox<>();
-
-    @FXML
-    Button chooseClubButton;
-
-    @FXML
     Label errorLabel;
 
     private Stage stage;
@@ -47,31 +38,14 @@ public class UserLoginRegisterController {
     @FXML
     private void initialize() {
 
-        try{
-            Connection con = DataBaseConnector.connect("user", "");
-            var st = con.createStatement();
-            ObservableList<String> listInstance = FXCollections.observableArrayList();
-            var res = st.executeQuery("SELECT * FROM clubs_view");
-            while(res.next())
-                listInstance.add(res.getString(1));
-            clubChooser.setItems(listInstance);
-            con.close();
-        }catch (Exception e) {
-            e.printStackTrace();
-        }
     }
 
 
     @FXML
     private void loginButtonPressed(ActionEvent event){
 
-        if(loginField.getText().isEmpty())
-            errorLabel.setText("Login cannot be empty!");
-        else
-            errorLabel.setText("");
-
         if(!UserAuthentication.processLogin(loginField.getText(), passwordField.getText())){
-            errorLabel.setText("Wrong login or password!");
+            errorLabel.setText("Wrong login or password or no such user has been registered!");
             return;
         }
 
@@ -87,6 +61,7 @@ public class UserLoginRegisterController {
 
         if(!PasswordChecker.isValid(passwordField.getText())) {
             errorLabel.setText("Password not match requirements!");
+            return;
         }
 
         if(!UserAuthentication.processRegister(loginField.getText(), passwordField.getText())){
@@ -101,18 +76,8 @@ public class UserLoginRegisterController {
         stage.setScene(new Scene(ParentLoader.loadParent(UserMain.class, "UserRegisterPage.fxml"), UserMain.WINDOW_WIDTH, UserMain.WINDOW_HEIGHT));
         stage.show();
 
-    }
 
-    @FXML
-    private void chooseButtonPressed(ActionEvent event){
 
-        if(!clubChooser.getValue().equals("null")){
-            UserAuthentication.updateClub(clubChooser.getValue());
-        }
-
-        stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        stage.setScene(new Scene(ParentLoader.loadParent(UserMain.class, "UserMainPage.fxml"), UserMain.WINDOW_WIDTH, UserMain.WINDOW_HEIGHT));
-        stage.show();
     }
 
 }
