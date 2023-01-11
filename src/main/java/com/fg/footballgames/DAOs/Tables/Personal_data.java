@@ -15,6 +15,11 @@ public class Personal_data implements IDaoTableModel {
         return new String[]{id_person, name, surname, year_of_birth, nationality};
     }
 
+    @Override
+    public String getID(){
+        return id_person;
+    }
+
     public Personal_data(){
 
     }

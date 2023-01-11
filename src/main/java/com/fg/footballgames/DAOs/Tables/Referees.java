@@ -13,6 +13,10 @@ public class Referees implements IDaoTableModel {
         return new String[]{id_referee, personal_data_id, permissions};
     }
 
+    @Override
+    public String getID(){
+        return id_referee;
+    }
     public Referees(){
 
     }

@@ -1,6 +1,6 @@
 package com.fg.footballgames.DAOs.Views;
 
-public class MatchView {
+public class Fixtures_view {
     private String HOST;
     private String GUEST;
     private String HOST_GOALS;
@@ -9,10 +9,10 @@ public class MatchView {
     private String DATE;
     private String REFEREE;
 
-    public MatchView() {
+    public Fixtures_view() {
     }
 
-    public MatchView(String HOST, String GUEST, String HOST_GOALS, String GUEST_GOALS, String STADIUM, String DATE, String REFEREE) {
+    public Fixtures_view(String HOST, String GUEST, String HOST_GOALS, String GUEST_GOALS, String STADIUM, String DATE, String REFEREE) {
         this.HOST = HOST;
         this.GUEST = GUEST;
         this.HOST_GOALS = HOST_GOALS;

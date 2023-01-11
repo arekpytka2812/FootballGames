@@ -15,6 +15,11 @@ public class Clubs implements IDaoTableModel {
         return new String[]{id_club, name, city, stadium, year_founded};
     }
 
+    @Override
+    public String getID(){
+        return id_club;
+    }
+
     public Clubs(){
 
     }

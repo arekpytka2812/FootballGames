@@ -16,6 +16,11 @@ public class Suspensions implements IDaoTableModel {
         return new String[]{id_suspension, player_id, club_id, type, received_match, return_match};
     }
 
+    @Override
+    public String getID(){
+        return  id_suspension;
+    }
+
     public Suspensions() {
     }
     public Suspensions(String id_suspension, String player_id, String club_id, String type, String received_match, String return_match) {

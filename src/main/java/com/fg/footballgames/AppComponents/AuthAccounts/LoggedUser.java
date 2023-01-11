@@ -3,6 +3,7 @@ package com.fg.footballgames.AppComponents.AuthAccounts;
 public class LoggedUser extends LoggedPerson {
 
     private final String username;
+    private String favClub;
 
     private LoggedUser(String username){
 
@@ -16,6 +17,13 @@ public class LoggedUser extends LoggedPerson {
             loggedPerson = new LoggedUser(username);
 
         return (LoggedUser) loggedPerson;
+    }
+    public String getFavClub(){
+        return favClub;
+    }
+
+    public void setFavClub(String fav){
+        this.favClub = fav;
     }
 
     public static void removeInstance(){

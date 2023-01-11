@@ -14,6 +14,11 @@ public class Players implements IDaoTableModel {
         return new String[]{id_player, personal_data_id, club, position};
     }
 
+    @Override
+    public String getID(){
+        return id_player;
+    }
+
     public Players(){
 
     }

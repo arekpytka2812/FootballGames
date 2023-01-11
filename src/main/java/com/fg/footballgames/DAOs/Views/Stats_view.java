@@ -1,6 +1,6 @@
 package com.fg.footballgames.DAOs.Views;
 
-public class StatsView {
+public class Stats_view {
     private String NAME;
     private String SURNAME;
     private String GOALS;
@@ -8,10 +8,10 @@ public class StatsView {
     private String YELLOW_CARDS;
     private String RED_CARDS;
 
-    public StatsView() {
+    public Stats_view() {
     }
 
-    public StatsView(String NAME, String SURNAME, String GOALS, String ASSISTS, String YELLOW_CARDS, String RED_CARDS) {
+    public Stats_view(String NAME, String SURNAME, String GOALS, String ASSISTS, String YELLOW_CARDS, String RED_CARDS) {
         this.NAME = NAME;
         this.SURNAME = SURNAME;
         this.GOALS = GOALS;

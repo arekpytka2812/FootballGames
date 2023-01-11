@@ -18,6 +18,11 @@ public class Fixtures implements IDaoTableModel {
         return new String[]{id_match, host, guest, host_goals, guest_goals, stadium, referee, date};
     }
 
+    @Override
+    public String getID(){
+        return id_match;
+    }
+
     public Fixtures(){
 
     }
