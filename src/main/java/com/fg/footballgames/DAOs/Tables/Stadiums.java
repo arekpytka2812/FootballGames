@@ -18,6 +18,11 @@ public class Stadiums implements IDaoTableModel {
         return new String[]{id_stadium, name, capacity, city, address, pitch_length, pitch_width, year_of_built};
     }
 
+    @Override
+    public String getID(){
+        return id_stadium;
+    }
+
     public Stadiums(){
 
     }

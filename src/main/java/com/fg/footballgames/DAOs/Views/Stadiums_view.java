@@ -1,6 +1,6 @@
 package com.fg.footballgames.DAOs.Views;
 
-public class StadiumView {
+public class Stadiums_view {
     private String NAME;
     private String CAPACITY;
     private String CITY;
@@ -9,10 +9,10 @@ public class StadiumView {
     private String PITCH_WIDTH;
     private String YEAR_OF_BUILT;
 
-    public StadiumView() {
+    public Stadiums_view() {
     }
 
-    public StadiumView(String NAME, String CAPACITY, String CITY, String ADDRESS, String PITCH_LENGTH, String PITCH_WIDTH, String YEAR_OF_BUILT) {
+    public Stadiums_view(String NAME, String CAPACITY, String CITY, String ADDRESS, String PITCH_LENGTH, String PITCH_WIDTH, String YEAR_OF_BUILT) {
         this.NAME = NAME;
         this.CAPACITY = CAPACITY;
         this.CITY = CITY;

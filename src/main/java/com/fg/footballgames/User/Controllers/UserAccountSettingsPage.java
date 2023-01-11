@@ -3,6 +3,7 @@ package com.fg.footballgames.User.Controllers;
 import com.fg.footballgames.AppComponents.*;
 import com.fg.footballgames.DAOs.Views.Clubs_view;
 import com.fg.footballgames.User.UserAuthentication;
+import com.fg.footballgames.User.UserMain;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -31,8 +32,6 @@ public class UserAccountSettingsPage {
 
     @FXML
     Button saveClubButton;
-
-    // TODO ustaiwic errora label
     @FXML
     Label errorLabel;
 
@@ -50,15 +49,14 @@ public class UserAccountSettingsPage {
         }
 
         favClubChooser.setItems(clubList);
+        favClubChooser.setPromptText(UserMain.loggedUser.getFavClub());
 
     }
 
     @FXML
     private void savePasswordButtonPressed(ActionEvent event){
-
-        // TODO no podac no rekłajermentsy do passsłowa
         if(!PasswordChecker.isValid(firstNewPasswordField.getText())){
-            errorLabel.setText("Password does not meet requirements!");
+            errorLabel.setText("Password does not meet requirements (min. 8 chars., one big and one small letter and one number)!");
             return;
         }
 

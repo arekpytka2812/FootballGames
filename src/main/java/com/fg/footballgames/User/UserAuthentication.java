@@ -2,7 +2,7 @@ package com.fg.footballgames.User;
 
 import com.fg.footballgames.AppComponents.AuthAccounts.LoggedUser;
 import com.fg.footballgames.AppComponents.DataBaseConnector;
-import com.fg.footballgames.AppComponents.QueryExecutor;
+import com.fg.footballgames.AppComponents.QueryBuilder;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -44,7 +44,7 @@ public class UserAuthentication {
 
     private static ResultSet authenticate(Statement statement, String login, String password) throws SQLException{
 
-        String query = QueryExecutor.buildPasswordCheckQuery("*", "accounts", login, password);
+        String query = QueryBuilder.buildPasswordCheckQuery("*", "accounts", login, password);
 
         return statement.executeQuery(query);
     }
@@ -116,7 +116,7 @@ public class UserAuthentication {
             else{
                 statement.executeUpdate("UPDATE accounts SET fav_club = '" + newFavClub + "' WHERE login = '" + UserMain.loggedUser.getUsername() + "'");
             }
-
+            UserMain.loggedUser.setFavClub(newFavClub);
             DataBaseConnector.disconnect(connection);
 
         }catch (SQLException e){

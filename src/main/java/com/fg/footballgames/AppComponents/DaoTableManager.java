@@ -79,5 +79,6 @@ public class DaoTableManager {
         return subs[subs.length - 1].toLowerCase();
     }
 
+    // TODO update i delete dopisać
 
 }

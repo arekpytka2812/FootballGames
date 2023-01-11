@@ -8,7 +8,7 @@ import java.util.List;
 
 // TODO klasa totalnie do przerobienia
 
-public class QueryExecutor {
+public class QueryBuilder {
 
     private static final String selectFrom = "SELECT * FROM ?";
     private static final String selectWhere = "SELECT * FROM ? WHERE ?";

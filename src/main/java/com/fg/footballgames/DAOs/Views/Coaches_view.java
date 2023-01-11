@@ -1,16 +1,16 @@
 package com.fg.footballgames.DAOs.Views;
 
-public class CoachView{
+public class Coaches_view {
     private String NAME;
     private String SURNAME;
     private String CLUB;
     private String PERMISSIONS;
     private String ROLE;
 
-    public CoachView() {
+    public Coaches_view() {
     }
 
-    public CoachView(String NAME, String SURNAME, String CLUB, String PERMISSIONS, String ROLE) {
+    public Coaches_view(String NAME, String SURNAME, String CLUB, String PERMISSIONS, String ROLE) {
         this.NAME = NAME;
         this.SURNAME = SURNAME;
         this.CLUB = CLUB;
