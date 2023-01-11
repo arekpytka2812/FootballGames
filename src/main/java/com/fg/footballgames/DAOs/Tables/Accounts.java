@@ -13,6 +13,11 @@ public class Accounts implements IDaoTableModel {
         return new String[]{login, password, fav_club};
     }
 
+    @Override
+    public String getID(){
+        return login;
+    }
+
     public Accounts(){
 
     }

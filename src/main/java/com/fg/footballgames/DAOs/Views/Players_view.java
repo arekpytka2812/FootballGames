@@ -1,15 +1,15 @@
 package com.fg.footballgames.DAOs.Views;
 
-public class PlayersView {
+public class Players_view {
     private String NAME;
     private String SURNAME;
     private String CLUB;
     private String POSITION;
 
-    public PlayersView() {
+    public Players_view() {
     }
 
-    public PlayersView(String NAME, String SURNAME, String CLUB, String POSITION) {
+    public Players_view(String NAME, String SURNAME, String CLUB, String POSITION) {
         this.NAME = NAME;
         this.SURNAME = SURNAME;
         this.CLUB = CLUB;

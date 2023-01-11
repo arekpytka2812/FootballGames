@@ -1,6 +1,6 @@
 package com.fg.footballgames.DAOs.Views;
 
-public class SuspensionsView {
+public class Suspensions_view {
     private String NAME;
     private String SURNAME;
     private String CLUBS;
@@ -8,10 +8,10 @@ public class SuspensionsView {
     private String RECEIVED_MATCH;
     private String RETURN_MATCH;
 
-    public SuspensionsView() {
+    public Suspensions_view() {
     }
 
-    public SuspensionsView(String NAME, String SURNAME, String CLUBS, String TYPE, String RECEIVED_MATCH, String RETURN_MATCH) {
+    public Suspensions_view(String NAME, String SURNAME, String CLUBS, String TYPE, String RECEIVED_MATCH, String RETURN_MATCH) {
         this.NAME = NAME;
         this.SURNAME = SURNAME;
         this.CLUBS = CLUBS;

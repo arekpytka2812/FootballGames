@@ -1,14 +1,14 @@
 package com.fg.footballgames.DAOs.Views;
 
-public class RefereeView {
+public class Referees_view {
     private String NAME;
     private String SURNAME;
     private String permissions;
 
-    public RefereeView() {
+    public Referees_view() {
     }
 
-    public RefereeView(String NAME, String SURNAME, String permissions) {
+    public Referees_view(String NAME, String SURNAME, String permissions) {
         this.NAME = NAME;
         this.SURNAME = SURNAME;
         this.permissions = permissions;

@@ -1,8 +1,5 @@
 package com.fg.footballgames.DAOs.Tables;
 
-// TODO change database enums to code enums??
-// don't know if it will work
-
 import com.fg.footballgames.DAOs.IDaoTableModel;
 
 public class Coaches implements IDaoTableModel {
@@ -16,6 +13,11 @@ public class Coaches implements IDaoTableModel {
     @Override
     public String[] getAll(){
         return new String[]{id_coach, personal_data_id, club_id, permissions,role};
+    }
+
+    @Override
+    public String getID(){
+        return id_coach;
     }
 
     public Coaches(){

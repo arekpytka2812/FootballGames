@@ -1,14 +1,14 @@
 package com.fg.footballgames.DAOs.Views;
 
-public class GoalsDifference{
+public class Goals_difference {
     private String CLUB;
     private String GOALS_SCORED;
     private String GOALS_CONCEDED;
 
-    public GoalsDifference() {
+    public Goals_difference() {
     }
 
-    public GoalsDifference(String CLUB, String GOALS_SCORED, String GOALS_CONCEDED) {
+    public Goals_difference(String CLUB, String GOALS_SCORED, String GOALS_CONCEDED) {
         this.CLUB = CLUB;
         this.GOALS_SCORED = GOALS_SCORED;
         this.GOALS_CONCEDED = GOALS_CONCEDED;
