@@ -6,6 +6,8 @@ public class Nationality implements com.fg.footballgames.DAOs.IDaoTableModel {
         private String country;
         private String federation;
 
+
+
     @Override
     public String[] getAll(){
         return new String[]{id_country, country, federation};
@@ -17,6 +19,10 @@ public class Nationality implements com.fg.footballgames.DAOs.IDaoTableModel {
     }
 
     public Nationality() {
+    }
+
+    public Nationality(String id_country) {
+        this.id_country = id_country;
     }
 
     public Nationality(String id_country, String country, String federation) {

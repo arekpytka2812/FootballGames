@@ -27,6 +27,10 @@ public class Stadiums implements IDaoTableModel {
 
     }
 
+    public Stadiums(String id_stadium) {
+        this.id_stadium = id_stadium;
+    }
+
     public Stadiums(String id_stadium, String name, String capacity, String city, String address, String pitch_length, String pitch_width, String year_of_built) {
         this.id_stadium = id_stadium;
         this.name = name;

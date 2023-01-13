@@ -25,6 +25,10 @@ public class Standings  implements IDaoTableModel {
     public Standings() {
     }
 
+    public Standings(String club_id) {
+        this.club_id = club_id;
+    }
+
     public Standings(String club_id, String points, String goals_scored, String goals_conceded, String wins, String draws, String losses) {
         this.club_id = club_id;
         this.points = points;

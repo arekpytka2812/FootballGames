@@ -1,9 +1,16 @@
 package com.fg.footballgames.DAOs.Views;
 
-public class Goals_difference {
+import com.fg.footballgames.DAOs.IDaoViewModel;
+
+public class Goals_difference implements IDaoViewModel {
     private String CLUB;
     private String GOALS_SCORED;
     private String GOALS_CONCEDED;
+
+    @Override
+    public String[] getAll() {
+        return new String[]{CLUB, GOALS_SCORED, GOALS_CONCEDED};
+    }
 
     public Goals_difference() {
     }

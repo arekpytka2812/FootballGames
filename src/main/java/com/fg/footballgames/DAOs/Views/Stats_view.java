@@ -1,12 +1,19 @@
 package com.fg.footballgames.DAOs.Views;
 
-public class Stats_view {
+import com.fg.footballgames.DAOs.IDaoViewModel;
+
+public class Stats_view implements IDaoViewModel {
     private String NAME;
     private String SURNAME;
     private String GOALS;
     private String ASSISTS;
     private String YELLOW_CARDS;
     private String RED_CARDS;
+
+    @Override
+    public String[] getAll() {
+        return new String[]{NAME, SURNAME, GOALS, ASSISTS, YELLOW_CARDS, RED_CARDS};
+    }
 
     public Stats_view() {
     }

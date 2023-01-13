@@ -23,6 +23,10 @@ public class Stats  implements IDaoTableModel {
     public Stats() {
     }
 
+    public Stats(String id_player) {
+        this.id_player = id_player;
+    }
+
     public Stats(String id_player, String goals, String assists, String yellow_cards, String red_cards) {
         this.id_player = id_player;
         this.goals = goals;

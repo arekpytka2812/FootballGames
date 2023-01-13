@@ -19,6 +19,10 @@ public class Positions implements com.fg.footballgames.DAOs.IDaoTableModel {
     public Positions() {
     }
 
+    public Positions(String id_position) {
+        this.id_position = id_position;
+    }
+
     public Positions(String id_position, String position, String formation) {
         this.id_position = id_position;
         this.position = position;

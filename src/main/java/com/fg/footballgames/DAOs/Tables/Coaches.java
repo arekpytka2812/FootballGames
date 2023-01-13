@@ -24,6 +24,10 @@ public class Coaches implements IDaoTableModel {
 
     }
 
+    public Coaches(String id_coach){
+        this.id_coach = id_coach;
+    }
+
     public Coaches(String id_coach, String personal_data_id, String club_id, String permissions, String role) {
         this.id_coach = id_coach;
         this.personal_data_id = personal_data_id;
