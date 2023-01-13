@@ -1,9 +1,16 @@
 package com.fg.footballgames.DAOs.Views;
 
-public class Main_standings {
+import com.fg.footballgames.DAOs.IDaoViewModel;
+
+public class Main_standings implements IDaoViewModel {
     private String CLUB;
     private String POINTS;
     private String GOAL_DIFFERENCE;
+
+    @Override
+    public String[] getAll() {
+        return new String[]{CLUB, POINTS, GOAL_DIFFERENCE};
+    }
 
     public Main_standings() {
     }

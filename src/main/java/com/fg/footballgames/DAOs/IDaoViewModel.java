@@ -1,5 +1,5 @@
 package com.fg.footballgames.DAOs;
 
-public interface IDaoViewModel {
+public interface IDaoViewModel{
     String[] getAll();
 }

@@ -1,11 +1,19 @@
 package com.fg.footballgames.DAOs.Views;
 
-public class Coaches_view {
+import com.fg.footballgames.DAOs.IDaoViewModel;
+
+public class Coaches_view implements IDaoViewModel {
     private String NAME;
     private String SURNAME;
     private String CLUB;
     private String PERMISSIONS;
     private String ROLE;
+
+    @Override
+    public String[] getAll(){
+        return new String[]{NAME, SURNAME, CLUB, PERMISSIONS, ROLE};
+    }
+
 
     public Coaches_view() {
     }

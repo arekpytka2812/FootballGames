@@ -24,6 +24,10 @@ public class Personal_data implements IDaoTableModel {
 
     }
 
+    public Personal_data(String id_person) {
+        this.id_person = id_person;
+    }
+
     public Personal_data(String id_person, String name, String surname, String year_of_birth, String nationality) {
         this.id_person = id_person;
         this.name = name;

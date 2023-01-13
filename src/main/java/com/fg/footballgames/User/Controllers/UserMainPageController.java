@@ -77,7 +77,7 @@ public class UserMainPageController {
         UserAuthentication.processLogout();
 
         stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        stage.setScene(new Scene(ParentLoader.loadParent(UserMain.class, "UserLoginPage.fxml"), UserMain.WINDOW_WIDTH, UserMain.WINDOW_WIDTH));
+        stage.setScene(new Scene(ParentLoader.loadParent(UserMain.class, "UserLoginPage.fxml"), UserMain.WINDOW_WIDTH, UserMain.WINDOW_HEIGHT));
     }
 
     @FXML

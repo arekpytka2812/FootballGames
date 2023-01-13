@@ -1,6 +1,8 @@
 package com.fg.footballgames.DAOs.Views;
 
-public class Fixtures_view {
+import com.fg.footballgames.DAOs.IDaoViewModel;
+
+public class Fixtures_view implements IDaoViewModel {
     private String HOST;
     private String GUEST;
     private String HOST_GOALS;
@@ -8,6 +10,11 @@ public class Fixtures_view {
     private String STADIUM;
     private String DATE;
     private String REFEREE;
+
+    @Override
+    public String[] getAll() {
+        return new String[]{HOST, GUEST, HOST_GOALS, GUEST_GOALS, STADIUM, DATE, REFEREE};
+    }
 
     public Fixtures_view() {
     }

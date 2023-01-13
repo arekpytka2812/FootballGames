@@ -24,6 +24,10 @@ public class Clubs implements IDaoTableModel {
 
     }
 
+    public Clubs(String id_club){
+        this.id_club = id_club;
+    }
+
     public Clubs(String id_club, String name, String city, String stadium, String year_founded) {
         this.id_club = id_club;
         this.name = name;

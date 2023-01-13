@@ -23,6 +23,10 @@ public class Players implements IDaoTableModel {
 
     }
 
+    public Players(String id_player) {
+        this.id_player = id_player;
+    }
+
     public Players(String id_player, String personal_data_id, String club, String position) {
         this.id_player = id_player;
         this.personal_data_id = personal_data_id;

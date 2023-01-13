@@ -18,13 +18,7 @@ public class LoggedUser extends LoggedPerson {
 
         return (LoggedUser) loggedPerson;
     }
-    public String getFavClub(){
-        return favClub;
-    }
 
-    public void setFavClub(String fav){
-        this.favClub = fav;
-    }
 
     public static void removeInstance(){
         if(loggedPerson != null)
@@ -37,6 +31,14 @@ public class LoggedUser extends LoggedPerson {
 
     public String getUsername(){
         return username;
+    }
+
+    public String getFavClub(){
+        return favClub;
+    }
+
+    public void setFavClub(String fav){
+        this.favClub = fav;
     }
 
 }

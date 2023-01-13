@@ -1,12 +1,19 @@
 package com.fg.footballgames.DAOs.Views;
 
-public class Suspensions_view {
+import com.fg.footballgames.DAOs.IDaoViewModel;
+
+public class Suspensions_view implements IDaoViewModel {
     private String NAME;
     private String SURNAME;
     private String CLUBS;
     private String TYPE;
     private String RECEIVED_MATCH;
     private String RETURN_MATCH;
+
+    @Override
+    public String[] getAll() {
+        return new String[]{NAME, SURNAME, CLUBS, TYPE, RECEIVED_MATCH, RETURN_MATCH};
+    }
 
     public Suspensions_view() {
     }
