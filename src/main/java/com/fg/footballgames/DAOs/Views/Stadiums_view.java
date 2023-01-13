@@ -1,6 +1,8 @@
 package com.fg.footballgames.DAOs.Views;
 
-public class Stadiums_view {
+import com.fg.footballgames.DAOs.IDaoViewModel;
+
+public class Stadiums_view implements IDaoViewModel {
     private String NAME;
     private String CAPACITY;
     private String CITY;
@@ -8,6 +10,11 @@ public class Stadiums_view {
     private String PITCH_LENGTH;
     private String PITCH_WIDTH;
     private String YEAR_OF_BUILT;
+
+    @Override
+    public String[] getAll() {
+        return new String[]{NAME, CAPACITY, CITY, ADDRESS, PITCH_LENGTH, PITCH_WIDTH, YEAR_OF_BUILT};
+    }
 
     public Stadiums_view() {
     }

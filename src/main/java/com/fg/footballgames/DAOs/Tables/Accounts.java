@@ -22,8 +22,12 @@ public class Accounts implements IDaoTableModel {
 
     }
 
+    public Accounts(String login){
+        this.login = login;
+    }
+
     public Accounts(String login, String password, String fav_club){
-        this.login = password;
+        this.login = login;
         this.password = password;
         this.fav_club = fav_club;
     }

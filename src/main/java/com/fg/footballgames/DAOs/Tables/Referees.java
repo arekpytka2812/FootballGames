@@ -17,8 +17,13 @@ public class Referees implements IDaoTableModel {
     public String getID(){
         return id_referee;
     }
+
     public Referees(){
 
+    }
+
+    public Referees(String id_referee) {
+        this.id_referee = id_referee;
     }
 
     public Referees(String id_referee, String personal_data_id, String permissions) {
