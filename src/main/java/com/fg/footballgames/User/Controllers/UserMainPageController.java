@@ -91,7 +91,4 @@ public class UserMainPageController {
         mainPane.setCenter(ParentLoader.loadParent(UserMain.class, "UserAboutPage.fxml"));
         viewPicker.setText("---");
     }
-
-
-
 }

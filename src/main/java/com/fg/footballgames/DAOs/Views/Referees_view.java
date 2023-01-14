@@ -21,7 +21,7 @@ public class Referees_view implements IDaoViewModel {
         this.permissions = permissions;
     }
 
-    public String getNAME() {
+    public String getRefereeName() {
         return NAME;
     }
 
