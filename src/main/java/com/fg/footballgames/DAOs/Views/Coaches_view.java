@@ -26,7 +26,7 @@ public class Coaches_view implements IDaoViewModel {
         this.ROLE = ROLE;
     }
 
-    public String getNAME() {
+    public String getCoachName() {
         return NAME;
     }
 

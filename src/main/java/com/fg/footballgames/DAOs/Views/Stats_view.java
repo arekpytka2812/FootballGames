@@ -3,7 +3,7 @@ package com.fg.footballgames.DAOs.Views;
 import com.fg.footballgames.DAOs.IDaoViewModel;
 
 public class Stats_view implements IDaoViewModel {
-    private String NAME;
+    private String PLAYER_NAME;
     private String SURNAME;
     private String GOALS;
     private String ASSISTS;
@@ -12,14 +12,14 @@ public class Stats_view implements IDaoViewModel {
 
     @Override
     public String[] getAll() {
-        return new String[]{NAME, SURNAME, GOALS, ASSISTS, YELLOW_CARDS, RED_CARDS};
+        return new String[]{PLAYER_NAME, SURNAME, GOALS, ASSISTS, YELLOW_CARDS, RED_CARDS};
     }
 
     public Stats_view() {
     }
 
     public Stats_view(String NAME, String SURNAME, String GOALS, String ASSISTS, String YELLOW_CARDS, String RED_CARDS) {
-        this.NAME = NAME;
+        this.PLAYER_NAME = NAME;
         this.SURNAME = SURNAME;
         this.GOALS = GOALS;
         this.ASSISTS = ASSISTS;
@@ -27,8 +27,8 @@ public class Stats_view implements IDaoViewModel {
         this.RED_CARDS = RED_CARDS;
     }
 
-    public String getNAME() {
-        return NAME;
+    public String getPlayerName() {
+        return PLAYER_NAME;
     }
 
     public String getSURNAME() {

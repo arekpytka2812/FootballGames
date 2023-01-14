@@ -29,7 +29,7 @@ public class Stadiums_view implements IDaoViewModel {
         this.YEAR_OF_BUILT = YEAR_OF_BUILT;
     }
 
-    public String getNAME() {
+    public String getStadiumName() {
         return NAME;
     }
 
