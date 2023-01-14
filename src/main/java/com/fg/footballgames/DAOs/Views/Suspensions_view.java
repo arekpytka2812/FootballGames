@@ -27,7 +27,7 @@ public class Suspensions_view implements IDaoViewModel {
         this.RETURN_MATCH = RETURN_MATCH;
     }
 
-    public String getNAME() {
+    public String getPlayerName() {
         return NAME;
     }
 

@@ -23,7 +23,7 @@ public class Players_view implements IDaoViewModel {
         this.POSITION = POSITION;
     }
 
-    public String getNAME() {
+    public String getPlayerName() {
         return NAME;
     }
 

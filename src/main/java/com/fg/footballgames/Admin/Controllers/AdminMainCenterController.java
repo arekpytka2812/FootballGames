@@ -58,6 +58,8 @@ public class AdminMainCenterController {
         DaoTableManager.update(dao, "nationality", "POL");
 
         updateQueryView();
+
+        // TODO z frontendu ściągać wartość do update
     }
 
     @FXML

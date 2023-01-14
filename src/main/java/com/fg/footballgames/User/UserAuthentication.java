@@ -2,7 +2,7 @@ package com.fg.footballgames.User;
 
 import com.fg.footballgames.AppComponents.AuthAccounts.LoggedUser;
 import com.fg.footballgames.AppComponents.DataBaseConnector;
-import com.fg.footballgames.AppComponents.QueryBuilder;
+import com.fg.footballgames.AppComponents.SelectQueryBuilder;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -44,7 +44,7 @@ public class UserAuthentication {
 
     private static ResultSet authenticate(Statement statement, String login, String password) throws SQLException{
 
-        String query = QueryBuilder.buildPasswordCheckQuery("*", "accounts", login, password);
+        String query = SelectQueryBuilder.buildPasswordCheckQuery("*", "accounts", login, password);
 
         return statement.executeQuery(query);
     }

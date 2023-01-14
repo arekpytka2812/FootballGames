@@ -2,21 +2,20 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.MenuButton?>
-<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fg.footballgames.User.Controllers.UserMainPageController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="773.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/11" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fg.footballgames.User.Controllers.UserMainPageController">
    <children>
-      <BorderPane fx:id="mainPane" prefHeight="400.0" prefWidth="600.0" AnchorPane.topAnchor="0.0">
+      <BorderPane fx:id="mainPane" prefHeight="720.0" prefWidth="1280.0" AnchorPane.topAnchor="8.0">
          <top>
-            <AnchorPane prefHeight="27.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+            <AnchorPane prefHeight="30.0" prefWidth="1280.0" BorderPane.alignment="CENTER">
                <children>
-                  <MenuButton fx:id="viewPicker" layoutX="424.0" layoutY="1.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="170.0" text="View Picker" />
-                  <Button fx:id="accountSettingsButton" layoutX="56.0" layoutY="1.0" mnemonicParsing="false" onAction="#accountSettingsButtonPressed" text="Account Settings" />
-                  <Button fx:id="aboutButton" layoutY="1.0" mnemonicParsing="false" onAction="#aboutButtonPressed" text="About" />
-                   <Button fx:id="mainPageButton" layoutX="300.0" layoutY="1.0" mnemonicParsing="false" onAction="#mainPageButtonPressed" text="Main Page" />
-                  <Button fx:id="logoutButton" onAction="#logoutButtonPressed" layoutX="168.0" layoutY="1.0" mnemonicParsing="false" text="Logout" />
+                  <MenuButton fx:id="viewPicker" layoutX="1096.0" layoutY="3.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="170.0" text="View Picker" />
+                  <Button fx:id="accountSettingsButton" layoutX="106.0" layoutY="1.0" mnemonicParsing="false" onAction="#accountSettingsButtonPressed" text="Account Settings" />
+                  <Button fx:id="aboutButton" layoutX="24.0" layoutY="1.0" mnemonicParsing="false" onAction="#aboutButtonPressed" text="About" />
+                   <Button fx:id="mainPageButton" layoutX="978.0" layoutY="1.0" mnemonicParsing="false" onAction="#mainPageButtonPressed" text="Main Page" />
+                  <Button fx:id="logoutButton" layoutX="248.0" layoutY="1.0" mnemonicParsing="false" onAction="#logoutButtonPressed" text="Logout" />
                </children>
             </AnchorPane>
          </top>
