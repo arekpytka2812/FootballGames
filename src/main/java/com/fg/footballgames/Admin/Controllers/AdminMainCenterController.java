@@ -81,7 +81,7 @@ public class AdminMainCenterController {
         modelsList = DaoTableManager.selectAll(classType.getClassName());
 
         queryView.setItems(modelsList);
-        queryView.getColumns().addAll(TableViewWrapper.tableListToTableColumnsList(modelsList, classType.getClassName()));
+        queryView.getColumns().addAll(TableViewWrapper.tableListToTableColumnsList(classType.getClassName()));
 
     }
 

@@ -60,7 +60,6 @@ public class UserRegisterChooseClubController {
 
         stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         stage.setScene(new Scene(ParentLoader.loadParent(UserMain.class, "UserMainPage.fxml"), UserMain.WINDOW_WIDTH, UserMain.WINDOW_HEIGHT));
-        stage.show();
     }
 
 }
