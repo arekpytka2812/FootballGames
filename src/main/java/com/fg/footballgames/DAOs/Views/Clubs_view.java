@@ -29,19 +29,19 @@ public class Clubs_view implements IDaoViewModel {
 
     public String getId_club(){return id_club;}
 
-    public String getClubName() {
+    public String getCLUB_NAME() {
         return CLUB_NAME;
     }
 
-    public String getCity() {
+    public String getCITY() {
         return CITY;
     }
 
-    public String getStadium() {
+    public String getSTADIUM() {
         return STADIUM;
     }
 
-    public String getYear_founded() {
+    public String getYEAR_FOUNDED() {
         return YEAR_FOUNDED;
     }
 }

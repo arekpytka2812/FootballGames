@@ -3,32 +3,32 @@ package com.fg.footballgames.DAOs.Views;
 import com.fg.footballgames.DAOs.IDaoViewModel;
 
 public class Suspensions_view implements IDaoViewModel {
-    private String NAME;
+    private String PLAYER_NAME;
     private String SURNAME;
     private String CLUBS;
-    private String TYPE;
+    private String SUS_TYPE;
     private String RECEIVED_MATCH;
     private String RETURN_MATCH;
 
     @Override
     public String[] getAll() {
-        return new String[]{NAME, SURNAME, CLUBS, TYPE, RECEIVED_MATCH, RETURN_MATCH};
+        return new String[]{PLAYER_NAME, SURNAME, CLUBS, SUS_TYPE, RECEIVED_MATCH, RETURN_MATCH};
     }
 
     public Suspensions_view() {
     }
 
-    public Suspensions_view(String NAME, String SURNAME, String CLUBS, String TYPE, String RECEIVED_MATCH, String RETURN_MATCH) {
-        this.NAME = NAME;
+    public Suspensions_view(String PLAYER_NAME, String SURNAME, String CLUBS, String SUS_TYPE, String RECEIVED_MATCH, String RETURN_MATCH) {
+        this.PLAYER_NAME = PLAYER_NAME;
         this.SURNAME = SURNAME;
         this.CLUBS = CLUBS;
-        this.TYPE = TYPE;
+        this.SUS_TYPE = SUS_TYPE;
         this.RECEIVED_MATCH = RECEIVED_MATCH;
         this.RETURN_MATCH = RETURN_MATCH;
     }
 
-    public String getPlayerName() {
-        return NAME;
+    public String getPLAYER_NAME() {
+        return PLAYER_NAME;
     }
 
     public String getSURNAME() {
@@ -39,8 +39,8 @@ public class Suspensions_view implements IDaoViewModel {
         return CLUBS;
     }
 
-    public String getTYPE() {
-        return TYPE;
+    public String getSUS_TYPE() {
+        return SUS_TYPE;
     }
 
     public String getRECEIVED_MATCH() {

@@ -3,28 +3,28 @@ package com.fg.footballgames.DAOs.Views;
 import com.fg.footballgames.DAOs.IDaoViewModel;
 
 public class Players_view implements IDaoViewModel {
-    private String NAME;
+    private String PLAYER_NAME;
     private String SURNAME;
     private String CLUB;
     private String POSITION;
 
     @Override
     public String[] getAll() {
-        return new String[]{NAME, SURNAME, CLUB, POSITION};
+        return new String[]{PLAYER_NAME, SURNAME, CLUB, POSITION};
     }
 
     public Players_view() {
     }
 
-    public Players_view(String NAME, String SURNAME, String CLUB, String POSITION) {
-        this.NAME = NAME;
+    public Players_view(String PLAYER_NAME, String SURNAME, String CLUB, String POSITION) {
+        this.PLAYER_NAME = PLAYER_NAME;
         this.SURNAME = SURNAME;
         this.CLUB = CLUB;
         this.POSITION = POSITION;
     }
 
-    public String getPlayerName() {
-        return NAME;
+    public String getPLAYER_NAME() {
+        return PLAYER_NAME;
     }
 
     public String getSURNAME() {

@@ -31,7 +31,7 @@ public class ResultSetWrapper {
                  if(value == null)
                      continue;
 
-                 field.set(dataTransferObject, field.getType().getConstructor(field.getType()).newInstance(value));
+                 field.set(dataTransferObject, field.getType().getConstructor(String.class).newInstance(value));
              }
 
              list.add(dataTransferObject);

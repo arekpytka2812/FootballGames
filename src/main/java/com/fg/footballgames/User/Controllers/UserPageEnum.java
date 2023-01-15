@@ -2,6 +2,8 @@ package com.fg.footballgames.User.Controllers;
 
 public enum UserPageEnum {
 
+    // TODO create these pages
+
     ClubsPage("UserClubsCenter.fxml"),
     CoachesPage("UserCoachesCenter.fxml"),
     FixturesPage("UserFixturesCenter.fxml"),
