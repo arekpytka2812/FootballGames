@@ -3,33 +3,33 @@ package com.fg.footballgames.DAOs.Views;
 import com.fg.footballgames.DAOs.IDaoViewModel;
 
 public class Referees_view implements IDaoViewModel {
-    private String NAME;
+    private String REFEREE_NAME;
     private String SURNAME;
-    private String permissions;
+    private String PERMISSIONS;
 
     @Override
     public String[] getAll() {
-        return new String[]{NAME, SURNAME, permissions};
+        return new String[]{REFEREE_NAME, SURNAME, PERMISSIONS};
     }
 
     public Referees_view() {
     }
 
-    public Referees_view(String NAME, String SURNAME, String permissions) {
-        this.NAME = NAME;
+    public Referees_view(String REFEREE_NAME, String SURNAME, String PERMISSIONS) {
+        this.REFEREE_NAME = REFEREE_NAME;
         this.SURNAME = SURNAME;
-        this.permissions = permissions;
+        this.PERMISSIONS = PERMISSIONS;
     }
 
-    public String getRefereeName() {
-        return NAME;
+    public String getREFEREE_NAME() {
+        return REFEREE_NAME;
     }
 
     public String getSURNAME() {
         return SURNAME;
     }
 
-    public String getPermissions() {
-        return permissions;
+    public String getPERMISSIONS() {
+        return PERMISSIONS;
     }
 }

@@ -6,14 +6,14 @@ public enum DaoViewEnum {
 
     Clubs_view(Clubs_view.class),
     Coaches_view(Coaches_view.class),
-    Fixtures_View(Fixtures_view.class),
-    Goals_Difference(Goals_difference.class),
-    Main_Standings(Main_standings.class),
-    Players_View(Players_view.class),
-    Referees_View(Referees_view.class),
-    Stadiums_View(Stadiums_view.class),
-    Stats_View(Stats_view.class),
-    Suspensions_View(Suspensions_view.class);
+    Fixtures_view(Fixtures_view.class),
+    Goals_difference(Goals_difference.class),
+    Main_standings(Main_standings.class),
+    Players_view(Players_view.class),
+    Referees_view(Referees_view.class),
+    Stadiums_view(Stadiums_view.class),
+    Stats_view(Stats_view.class),
+    Suspensions_view(Suspensions_view.class);
 
 
     private Class<IDaoViewModel> clazz;

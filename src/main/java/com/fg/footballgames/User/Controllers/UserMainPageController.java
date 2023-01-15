@@ -16,7 +16,6 @@ import javafx.stage.Stage;
 import java.util.ArrayList;
 import java.util.List;
 
-// TODO add main page center pane
 public class UserMainPageController {
 
     @FXML

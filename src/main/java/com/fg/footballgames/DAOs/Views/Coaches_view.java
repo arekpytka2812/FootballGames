@@ -3,7 +3,7 @@ package com.fg.footballgames.DAOs.Views;
 import com.fg.footballgames.DAOs.IDaoViewModel;
 
 public class Coaches_view implements IDaoViewModel {
-    private String NAME;
+    private String COACH_NAME;
     private String SURNAME;
     private String CLUB;
     private String PERMISSIONS;
@@ -11,7 +11,7 @@ public class Coaches_view implements IDaoViewModel {
 
     @Override
     public String[] getAll(){
-        return new String[]{NAME, SURNAME, CLUB, PERMISSIONS, ROLE};
+        return new String[]{COACH_NAME, SURNAME, CLUB, PERMISSIONS, ROLE};
     }
 
 
@@ -19,15 +19,15 @@ public class Coaches_view implements IDaoViewModel {
     }
 
     public Coaches_view(String NAME, String SURNAME, String CLUB, String PERMISSIONS, String ROLE) {
-        this.NAME = NAME;
+        this.COACH_NAME = NAME;
         this.SURNAME = SURNAME;
         this.CLUB = CLUB;
         this.PERMISSIONS = PERMISSIONS;
         this.ROLE = ROLE;
     }
 
-    public String getCoachName() {
-        return NAME;
+    public String getCOACH_NAME() {
+        return COACH_NAME;
     }
 
     public String getSURNAME() {

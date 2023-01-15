@@ -27,7 +27,7 @@ public class Stats_view implements IDaoViewModel {
         this.RED_CARDS = RED_CARDS;
     }
 
-    public String getPlayerName() {
+    public String getPLAYER_NAME() {
         return PLAYER_NAME;
     }
 

@@ -3,7 +3,7 @@ package com.fg.footballgames.DAOs.Views;
 import com.fg.footballgames.DAOs.IDaoViewModel;
 
 public class Stadiums_view implements IDaoViewModel {
-    private String NAME;
+    private String STADIUM_NAME;
     private String CAPACITY;
     private String CITY;
     private String ADDRESS;
@@ -13,14 +13,14 @@ public class Stadiums_view implements IDaoViewModel {
 
     @Override
     public String[] getAll() {
-        return new String[]{NAME, CAPACITY, CITY, ADDRESS, PITCH_LENGTH, PITCH_WIDTH, YEAR_OF_BUILT};
+        return new String[]{STADIUM_NAME, CAPACITY, CITY, ADDRESS, PITCH_LENGTH, PITCH_WIDTH, YEAR_OF_BUILT};
     }
 
     public Stadiums_view() {
     }
 
-    public Stadiums_view(String NAME, String CAPACITY, String CITY, String ADDRESS, String PITCH_LENGTH, String PITCH_WIDTH, String YEAR_OF_BUILT) {
-        this.NAME = NAME;
+    public Stadiums_view(String STADIUM_NAME, String CAPACITY, String CITY, String ADDRESS, String PITCH_LENGTH, String PITCH_WIDTH, String YEAR_OF_BUILT) {
+        this.STADIUM_NAME = STADIUM_NAME;
         this.CAPACITY = CAPACITY;
         this.CITY = CITY;
         this.ADDRESS = ADDRESS;
@@ -29,8 +29,8 @@ public class Stadiums_view implements IDaoViewModel {
         this.YEAR_OF_BUILT = YEAR_OF_BUILT;
     }
 
-    public String getStadiumName() {
-        return NAME;
+    public String getSTADIUM_NAME() {
+        return STADIUM_NAME;
     }
 
     public String getCAPACITY() {
