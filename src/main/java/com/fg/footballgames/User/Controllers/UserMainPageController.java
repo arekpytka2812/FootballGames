@@ -64,6 +64,12 @@ public class UserMainPageController {
         mainPane.setCenter(ParentLoader.loadParent(UserMain.class, "UserMainCenter.fxml"));
     }
 
+    private void comboAction(ActionEvent event) {
+
+        //System.out.println(viewPicker.getValue());
+
+    }
+
     @FXML
     private void mainPageButtonPressed(ActionEvent event){
         mainPane.setCenter(ParentLoader.loadParent(UserMain.class, "UserMainCenter.fxml"));
