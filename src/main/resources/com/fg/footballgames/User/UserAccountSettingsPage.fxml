@@ -4,28 +4,33 @@
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.ProgressBar?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fg.footballgames.User.Controllers.UserAccountSettingsPage">
+<AnchorPane prefHeight="690.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fg.footballgames.User.Controllers.UserAccountSettingsPage">
    <children>
-       <PasswordField fx:id="oldPasswordField" layoutX="134.0" layoutY="60.0" prefHeight="25.0" prefWidth="140.0" />
-       <PasswordField fx:id="firstNewPasswordField" layoutX="134.0" layoutY="142.0" prefHeight="25.0" prefWidth="140.0" />
-       <PasswordField fx:id="secondNewPasswordField" layoutX="134.0" layoutY="201.0" prefHeight="25.0" prefWidth="140.0" />
+       <PasswordField fx:id="oldPasswordField" layoutX="287.0" layoutY="60.0" prefHeight="25.0" prefWidth="140.0" />
+       <PasswordField fx:id="firstNewPasswordField" layoutX="287.0" layoutY="142.0" prefHeight="25.0" prefWidth="140.0" />
+       <PasswordField fx:id="secondNewPasswordField" layoutX="287.0" layoutY="201.0" prefHeight="25.0" prefWidth="140.0" />
 
-       <Label alignment="CENTER" layoutX="2.0" layoutY="64.0" prefHeight="17.0" prefWidth="125.0" text="Type old password:" />
-       <Label alignment="CENTER" layoutX="5.0" layoutY="146.0" prefHeight="17.0" prefWidth="125.0" text="Type new password:" />
-       <Label alignment="CENTER" layoutX="5.0" layoutY="201.0" prefHeight="25.0" prefWidth="125.0" text="Confirm new password:" />
+       <Label alignment="CENTER" layoutX="155.0" layoutY="64.0" prefHeight="17.0" prefWidth="125.0" text="Type old password:" />
+       <Label alignment="CENTER" layoutX="158.0" layoutY="146.0" prefHeight="17.0" prefWidth="125.0" text="Type new password:" />
+       <Label alignment="CENTER" layoutX="158.0" layoutY="201.0" prefHeight="25.0" prefWidth="125.0" text="Confirm new password:" />
        <Label fx:id="errorLabel" alignment="CENTER" layoutX="8.0" layoutY="278.0" prefHeight="18.0" prefWidth="582.0" text=" " textFill="RED" />
 
-       <Button fx:id="savePasswordButton" layoutX="118.0" layoutY="291.0" mnemonicParsing="false" onAction="#savePasswordButtonPressed" text="Save password" />
+       <Button fx:id="savePasswordButton" layoutX="271.0" layoutY="291.0" mnemonicParsing="false" onAction="#savePasswordButtonPressed" text="Save password" />
 
-       <ComboBox fx:id="favClubChooser" layoutX="437.0" layoutY="60.0" prefWidth="150.0" />
-      <Label alignment="CENTER" layoutX="303.0" layoutY="64.0" prefHeight="17.0" prefWidth="125.0" text="Choose favourite club:" />
+       <ComboBox fx:id="favClubChooser" layoutX="854.0" layoutY="142.0" prefWidth="150.0" />
+      <Label alignment="CENTER" layoutX="697.0" layoutY="146.0" prefHeight="17.0" prefWidth="125.0" text="Choose favourite club:" />
 
-       <Button fx:id="saveClubButton" layoutX="391.0" layoutY="291.0" mnemonicParsing="false" onAction="#saveClubButtonPressed" text="Save new club" />
+       <Button fx:id="saveClubButton" layoutX="815.0" layoutY="291.0" mnemonicParsing="false" onAction="#saveClubButtonPressed" text="Save new club" />
 
-      <Separator layoutX="297.0" layoutY="4.0" orientation="VERTICAL" prefHeight="393.0" prefWidth="3.0" />
+      <Separator layoutX="637.0" layoutY="5.0" orientation="VERTICAL" prefHeight="683.0" prefWidth="0.0" />
+      <ProgressBar fx:id="PassStrengthProgressBar" layoutX="46.0" layoutY="373.0" prefWidth="200.0" progress="0.0" />
+      <Label layoutX="273.0" layoutY="374.0" text="Password strength" />
+      <Label layoutX="700.0" layoutY="52.0" text="Current favourite club:" />
+      <Label fx:id="currentFavLabel" layoutX="826.0" layoutY="52.0" prefHeight="17.0" prefWidth="207.0" />
 
 
    </children>

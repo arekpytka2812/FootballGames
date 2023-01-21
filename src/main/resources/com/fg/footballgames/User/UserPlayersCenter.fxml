@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="690.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fg.footballgames.User.Controllers.UserPlayersCenterController">
+   <children>
+      <TableView fx:id="playersTableView" layoutX="21.0" layoutY="170.0" prefHeight="477.0" prefWidth="1238.0" />
+      <RadioButton fx:id="allClubsRadio" layoutX="938.0" layoutY="68.0" mnemonicParsing="false" onAction="#allClubsRadioClicked" text="all clubs" />
+      <RadioButton fx:id="chosenClubRadio" layoutX="938.0" layoutY="101.0" mnemonicParsing="false" onAction="#chosenClubRadioClicked" text="chosen club:" />
+      <Label layoutX="938.0" layoutY="40.0" text="Select players from:" />
+      <ChoiceBox fx:id="chosenClubChoiceBox" disable="true" layoutX="1042.0" layoutY="97.0" prefWidth="150.0" />
+   </children>
+</AnchorPane>
