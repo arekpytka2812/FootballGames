@@ -72,7 +72,6 @@ public class DaoTableManager {
             return true;
 
         }catch(SQLException e){
-            e.printStackTrace();
             return false;
         }
 
@@ -95,7 +94,6 @@ public class DaoTableManager {
             DataBaseConnector.disconnect(connection);
 
         }catch (Exception e) {
-            e.printStackTrace();
         }
 
         return modelsList;
@@ -123,7 +121,6 @@ public class DaoTableManager {
             return true;
 
         }catch (SQLException e){
-            e.printStackTrace();
             return false;
         }
     }
@@ -151,7 +148,6 @@ public class DaoTableManager {
             return true;
 
         } catch (SQLException e) {
-            e.printStackTrace();
             return false;
         }
     }
@@ -182,7 +178,6 @@ public class DaoTableManager {
                 return true;
 
             } catch (SQLException e) {
-                e.printStackTrace();
                 return false;
             }
         }
