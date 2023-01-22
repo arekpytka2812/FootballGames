@@ -8,8 +8,6 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.TableView;
 
-import java.sql.Connection;
-
 public class UserMainCenterController {
 
     @FXML
@@ -17,7 +15,6 @@ public class UserMainCenterController {
 
     @FXML
     TableView topScorersTable;
-
 
     private ObservableList<IDaoViewModel> scorersList;
     private ObservableList<IDaoViewModel> clubsList;

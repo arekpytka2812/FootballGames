@@ -29,7 +29,7 @@ public class DaoViewManager {
             DataBaseConnector.disconnect(connection);
 
         }catch (Exception e) {
-            e.printStackTrace();
+
         }
 
         return modelsList;
