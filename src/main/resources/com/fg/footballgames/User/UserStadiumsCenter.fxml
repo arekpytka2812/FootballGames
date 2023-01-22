@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.fg.footballgames.User.Controllers.UserStadiumsCenterController"
-            prefHeight="690.0" prefWidth="1280.0">
-
+<AnchorPane prefHeight="690.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fg.footballgames.User.Controllers.UserStadiumsCenterController">
+   <children>
+      <TableView fx:id="stadiumsViewTableView" layoutX="20.0" layoutY="20.0" onMouseClicked="#StadiumsViewTableViewOnFocus" prefHeight="610.0" prefWidth="1240.0" />
+      <Label fx:id="checkMessageLabel" layoutX="70.0" layoutY="660.0" prefHeight="20.0" prefWidth="1200.0" text="Sprawdzenie wymagan boiska" />
+      <CheckBox fx:id="requirementsCheckBox" disable="true" layoutX="20.0" layoutY="660.0" mnemonicParsing="false" />
+   </children>
 </AnchorPane>
