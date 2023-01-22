@@ -4,8 +4,8 @@
 <?import javafx.scene.layout.AnchorPane?>
 
 
-<AnchorPane prefHeight="690.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fg.footballgames.User.Controllers.UserClubsCenterController">
-   <children>
-      <TableView fx:id="clubsViewTableView" layoutX="177.0" layoutY="33.0" prefHeight="615.0" prefWidth="926.0" />
-   </children>
+<AnchorPane prefHeight="690.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/19"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.fg.footballgames.User.Controllers.UserClubsCenterController">
+   <TableView fx:id="clubsViewTableView" layoutX="20.0" layoutY="20.0" prefHeight="650.0" prefWidth="1240.0"/>
 </AnchorPane>
