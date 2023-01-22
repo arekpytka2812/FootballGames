@@ -1,9 +1,13 @@
 package com.fg.footballgames.User.Controllers;
 
+import com.fg.footballgames.AppComponents.DaoTableManager;
 import com.fg.footballgames.AppComponents.DaoViewManager;
+import com.fg.footballgames.AppComponents.TableViewWrapper;
 import com.fg.footballgames.DAOs.DaoViewEnum;
 import com.fg.footballgames.DAOs.IDaoViewModel;
+import com.fg.footballgames.DAOs.Tables.Players;
 import com.fg.footballgames.DAOs.Views.Clubs_view;
+import com.fg.footballgames.DAOs.Views.Players_view;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -38,10 +42,22 @@ public class UserPlayersCenterController {
     @FXML
     private void chosenClubRadioClicked(ActionEvent event){
         chosenClubChoiceBox.setDisable(false);
+        playersTableView.getColumns().clear();
     }
 
     @FXML
     private void allClubsRadioClicked(ActionEvent event){
         chosenClubChoiceBox.setDisable(true);
+        playersTableView.getColumns().clear();
+
+        //playersTableView.setItems(modelsList);
+        playersTableView.getColumns().addAll(TableViewWrapper.viewListToTableColumnsList(Players_view.class));
+    }
+
+    @FXML
+    private void chosenClubChoiceBoxSelected(ActionEvent event){
+        var clubName = chosenClubChoiceBox.getValue();
+        // TODO - make query select only chosen club
+        DaoViewManager.selectAll(Players_view.class);
     }
 }
