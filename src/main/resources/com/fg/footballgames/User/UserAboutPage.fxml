@@ -17,6 +17,6 @@
       </AnchorPane>
    </bottom>
    <center>
-      <Label fx:id="InfoLabel" prefHeight="258.0" prefWidth="446.0" text="Program aplikacji bazodanowej, która obsługuje rozgrywki piłkarskie, program kliencki" BorderPane.alignment="CENTER" />
+      <Label fx:id="InfoLabel" prefHeight="258.0" prefWidth="446.0" BorderPane.alignment="CENTER" />
    </center>
 </BorderPane>
