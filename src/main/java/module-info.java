@@ -24,4 +24,9 @@ module com.fg.footballgames {
 
     opens com.fg.footballgames.DAOs.Views to javafx.fxml;
     exports com.fg.footballgames.DAOs.Views;
+
+
+    exports com.fg.footballgames.AppComponents;
+    exports com.fg.footballgames.AppComponents.AuthAccounts;
+
 }
