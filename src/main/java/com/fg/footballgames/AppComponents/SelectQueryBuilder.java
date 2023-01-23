@@ -26,8 +26,6 @@ public class SelectQueryBuilder {
 
     }
 
-    // TODO - make string appender so we can build queries faster(?)
-
     public static String buildQueryEqualString(String table, String colReq, String condition){
         return "select * from " + table + " where " + colReq + " = '" + condition + "';";
     }

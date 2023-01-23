@@ -5,6 +5,7 @@ module com.fg.footballgames {
     requires org.controlsfx.controls;
     requires com.dlsc.formsfx;
     requires java.sql;
+    requires java.desktop;
 
     opens com.fg.footballgames.Admin to javafx.fxml;
     exports com.fg.footballgames.Admin;

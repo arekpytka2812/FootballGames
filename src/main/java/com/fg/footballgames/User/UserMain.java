@@ -19,8 +19,6 @@ public class UserMain extends Application {
 
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("UserLoginPage.fxml"));
 
-        // TODO change panes so they are relative
-
         Scene scene = new Scene(fxmlLoader.load(), WINDOW_WIDTH, WINDOW_HEIGHT);
         stage.setTitle("Football Games");
         stage.setScene(scene);

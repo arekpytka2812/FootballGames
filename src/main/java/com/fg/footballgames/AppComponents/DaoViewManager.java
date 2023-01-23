@@ -35,6 +35,30 @@ public class DaoViewManager {
         return modelsList;
     }
 
+    public static <T extends IDaoViewModel> ObservableList<T> getPlayersFromClub(String clubName, Class<T> clazz){
+
+        ObservableList<T> modelsList = FXCollections.observableArrayList();
+
+        try{
+            connection = DataBaseConnector.connect(UserMain.loggedUser.getConLogin(), UserMain.loggedUser.getConPass());
+
+            var st = connection.createStatement();
+
+            String query = "SELECT * FROM players_view where CLUB=(select CLUB_NAME from clubs_view where id_club='" + clubName + "')";
+
+            var res = st.executeQuery(query);
+
+            modelsList = ResultSetWrapper.resultSetToObservableList(res, clazz);
+
+            DataBaseConnector.disconnect(connection);
+
+        }catch (Exception e) {
+
+        }
+
+        return modelsList;
+    }
+
 
     private static <T> String classNameToString(Class<T> clazz){
 

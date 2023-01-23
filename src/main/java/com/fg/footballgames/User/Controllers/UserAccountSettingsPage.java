@@ -32,6 +32,7 @@ public class UserAccountSettingsPage {
 
     @FXML
     Button saveClubButton;
+
     @FXML
     Label errorLabel;
 
