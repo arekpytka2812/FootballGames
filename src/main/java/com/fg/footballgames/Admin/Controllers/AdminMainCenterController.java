@@ -97,7 +97,6 @@ public class AdminMainCenterController {
     private void insertButtonPressed(ActionEvent event){
         insertAnchorPane.setVisible(true);
 
-        insertFields = null;
         insertFields = classType.getClassName().getDeclaredFields();
 
         currentValuesLabel.setText(insertFields[0].getName() + " = ");
@@ -113,9 +112,6 @@ public class AdminMainCenterController {
         var value = valuesTextField.getText();
 
         var succeeded = DaoTableManager.update(dao, column, value);
-
-        if(!succeeded){
-        }
 
         updateQueryView();
         valuesTextField.clear();
@@ -150,15 +146,20 @@ public class AdminMainCenterController {
             insertValueTextField.clear();
             fieldNameLabel.setText("");
 
+            insertAnchorPane.setVisible(false);
+
             return;
         }
 
         valuesToInsert.add(insertValueTextField.getText());
 
-        insertValueTextField.clear();
+
 
         fieldNameLabel.setText(insertFields[valuesToInsert.size()].getName());
 
+        var labelText = currentValuesLabel.getText().toString() + " " + insertValueTextField.getText() + ", " + insertFields[valuesToInsert.size()].getName() + " = ";
+        currentValuesLabel.setText(labelText);
+        insertValueTextField.clear();
     }
 
     @FXML
