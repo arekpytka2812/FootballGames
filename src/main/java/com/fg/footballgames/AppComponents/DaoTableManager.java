@@ -76,7 +76,6 @@ public class DaoTableManager {
         }
 
     }
-        // TODO - make selects for more than only all columns
     public static <T extends IDaoTableModel> ObservableList<T> selectAll(Class<T> clazz){
 
         ObservableList<T> modelsList = FXCollections.observableArrayList();

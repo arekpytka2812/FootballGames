@@ -1,26 +1,24 @@
 package com.fg.footballgames.User.Controllers;
 
+import com.fg.footballgames.AppComponents.DaoViewManager;
+import com.fg.footballgames.AppComponents.TableViewWrapper;
+import com.fg.footballgames.DAOs.Views.Stadiums_view;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.scene.control.CheckBox;
-import javafx.scene.control.Label;
 import javafx.scene.control.TableView;
-import javafx.scene.input.MouseEvent;
 
 public class UserStadiumsCenterController {
     @FXML
     TableView stadiumsViewTableView;
-    @FXML
-    Label checkMessageLabel;
-    @FXML
-    CheckBox requirementsCheckBox;
+
+    private ObservableList<Stadiums_view> stadiumsList;
 
     @FXML
     private void initialize(){
+        stadiumsList = DaoViewManager.selectAll(Stadiums_view.class);
+
+        stadiumsViewTableView.setItems(stadiumsList);
+        stadiumsViewTableView.getColumns().addAll(TableViewWrapper.viewListToTableColumnsList(Stadiums_view.class));
 
     }
-    @FXML
-    private void StadiumsViewTableViewOnFocus(MouseEvent event){
-
-    }
-    // TODO - make tables with all stadiums and snall table checking if pitch meets requirements
 }

@@ -5,14 +5,13 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 
-<!-- TODO add labels, info etc -->
-
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="690.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fg.footballgames.User.Controllers.UserAboutPageController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="690.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/11" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fg.footballgames.User.Controllers.UserAboutPageController">
    <bottom>
       <AnchorPane prefHeight="60.0" prefWidth="600.0" BorderPane.alignment="CENTER">
          <children>
-            <Hyperlink fx:id="repositoryHyperlink" layoutX="530.0" layoutY="19.0" onAction="#repositoryLinkPressed" text="Repository" />
-            <Hyperlink fx:id="readmeHyperlink" layoutX="712.0" layoutY="19.0" onAction="#readmeLinkPressed" text="ReadMe" />
+            <Hyperlink fx:id="repositoryHyperlink" layoutX="608.0" layoutY="19.0" onAction="#repositoryLinkPressed" text="Repository" />
+            <Hyperlink fx:id="britneyHyperlink" layoutX="479.0" layoutY="19.0" onAction="#britneyLinkPressed" text="Arek Pytka" />
+            <Hyperlink fx:id="madonesHyperlink" layoutX="706.0" layoutY="19.0" onAction="#madonesLinkPressed" text="Adam Szatkowski" />
          </children>
       </AnchorPane>
    </bottom>
