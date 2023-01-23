@@ -155,7 +155,7 @@ public class UserAuthentication {
         return true;
     }
 
-    private static boolean checkOldPassword(String oldPassword){
+    public static boolean checkOldPassword(String oldPassword){
 
         Connection connection = null;
 
