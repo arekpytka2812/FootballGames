@@ -1,5 +1,4 @@
 package com.fg.footballgames.Admin.Controllers;
-
 import com.fg.footballgames.AppComponents.ClassToObject;
 import com.fg.footballgames.AppComponents.DaoTableManager;
 import com.fg.footballgames.AppComponents.TableViewWrapper;
@@ -83,7 +82,6 @@ public class AdminMainCenterController {
         var succeeded = DaoTableManager.update(dao, column, value);
 
         if(!succeeded){
-            // TODO error label ze sie zesrało
         }
 
         updateQueryView();

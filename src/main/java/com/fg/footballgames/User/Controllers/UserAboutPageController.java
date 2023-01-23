@@ -5,6 +5,11 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
 
+import java.awt.*;
+import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
+
 public class UserAboutPageController {
 
     @FXML
@@ -13,7 +18,11 @@ public class UserAboutPageController {
     Hyperlink repositoryHyperlink;
 
     @FXML
-    Hyperlink readmeHyperlink;
+    Hyperlink britneyHyperlink;
+
+    @FXML
+    Hyperlink madonesHyperLink;
+
     private static final String WORDS =
                     "Program aplikacji bazodanowej, \n" +
                     "która obsługuje rozgrywki piłkarskie, program kliencki.\n" +
@@ -23,17 +32,38 @@ public class UserAboutPageController {
     @FXML
     private void initialize(){
         InfoLabel.setText(WORDS);
-        repositoryHyperlink.setText("Repository");
-        readmeHyperlink.setText("ReadMe");
     }
 
     @FXML
     private void repositoryLinkPressed(ActionEvent event){
-        // TODO implement opening browser with repo link
+        openHyperLink("https://github.com/arekpytka2812/FootballGames");
     }
 
     @FXML
-    private void readmeLinkPressed(ActionEvent event){
-        // TODO implement opening browser with readme link
+    private void britneyLinkPressed(ActionEvent event){
+        openHyperLink("https://github.com/arekpytka2812/");
+
+    }
+
+    @FXML
+    private void madonesLinkPressed(ActionEvent event){
+        openHyperLink("https://github.com/mradamones/");
+    }
+
+    private void openHyperLink(String uriLink){
+
+        try {
+
+            URI uri = new URI(uriLink);
+
+            if (!Desktop.isDesktopSupported()) {
+                return;
+            }
+
+            Desktop.getDesktop().browse(uri);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
