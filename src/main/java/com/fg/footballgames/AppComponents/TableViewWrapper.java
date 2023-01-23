@@ -45,4 +45,19 @@ public class TableViewWrapper {
         return tableColumnList;
     }
 
+    public static <T extends IDaoViewModel> List<TableColumn<T, String>> selectedColumnsToTableColumnsList(Class<T> classType, List<String> columns){
+
+        List<TableColumn<T, String>> tableColumnList = FXCollections.observableArrayList();
+
+        for(String column : columns){
+            tableColumnList.add(new TableColumn<>(column));
+
+            tableColumnList.get(tableColumnList.size() - 1).setCellValueFactory((
+                    new PropertyValueFactory<>(column)
+                    ));
+        }
+
+        return tableColumnList;
+    }
+
 }

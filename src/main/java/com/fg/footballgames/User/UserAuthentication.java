@@ -30,6 +30,7 @@ public class UserAuthentication {
             }
 
             UserMain.loggedUser = LoggedUser.getInstance(authResult.getString("login"));
+            UserMain.loggedUser.setFavClub(authResult.getString("fav_club"));
 
             DataBaseConnector.disconnect(connection);
 

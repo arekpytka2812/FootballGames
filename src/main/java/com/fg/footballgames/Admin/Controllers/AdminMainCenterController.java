@@ -4,11 +4,16 @@ import com.fg.footballgames.AppComponents.DaoTableManager;
 import com.fg.footballgames.AppComponents.TableViewWrapper;
 import com.fg.footballgames.DAOs.DaoTableEnum;
 import com.fg.footballgames.DAOs.IDaoTableModel;
-import com.fg.footballgames.DAOs.Tables.Accounts;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.layout.AnchorPane;
+
+import java.lang.reflect.Field;
+import java.util.ArrayList;
+import java.util.List;
+
 
 public class AdminMainCenterController {
 
@@ -39,12 +44,36 @@ public class AdminMainCenterController {
     @FXML
     Button deleteButton;
 
+    @FXML
+    AnchorPane insertAnchorPane;
+
+    @FXML
+    Label fieldNameLabel;
+
+    @FXML
+    TextField insertValueTextField;
+
+    @FXML
+    Label currentValuesLabel;
+
+    @FXML
+    Button sendValueButton;
+
+    @FXML
+    Button dismissQueryButton;
+
     private ObservableList<IDaoTableModel> modelsList;
 
     private DaoTableEnum classType;
 
+    private Field[] insertFields;
+
+    private List<String> valuesToInsert;
+
     @FXML
     private void initialize(){
+
+        valuesToInsert = new ArrayList<>();
 
         var tablesList = DaoTableEnum.values();
 
@@ -52,6 +81,7 @@ public class AdminMainCenterController {
             tableChoiceComboBox.getItems().add(table.toString());
         }
 
+        insertAnchorPane.setVisible(false);
     }
 
     @FXML
@@ -65,10 +95,13 @@ public class AdminMainCenterController {
 
     @FXML
     private void insertButtonPressed(ActionEvent event){
+        insertAnchorPane.setVisible(true);
 
+        insertFields = null;
+        insertFields = classType.getClassName().getDeclaredFields();
 
-        // TODO rozrózniac czy dodawane jest konto uzytkownika czy cokolwiek innego i wywoływac albo inserta albo insertNewAccount
-
+        currentValuesLabel.setText(insertFields[0].getName() + " = ");
+        fieldNameLabel.setText(insertFields[0].getName());
     }
 
     @FXML
@@ -98,6 +131,44 @@ public class AdminMainCenterController {
         DaoTableManager.delete(dao);
 
         updateQueryView();
+    }
+
+    @FXML
+    private void sendButtonPressed(ActionEvent event){
+
+        if(insertFields[insertFields.length - 1].getName().equals(fieldNameLabel.getText())){
+
+            valuesToInsert.add(insertValueTextField.getText());
+
+            var dao = ClassToObject.createObject(classType.getClassName(), valuesToInsert);
+            DaoTableManager.insert(dao);
+
+            updateQueryView();
+
+            valuesToInsert.clear();
+            insertFields = null;
+            insertValueTextField.clear();
+            fieldNameLabel.setText("");
+
+            return;
+        }
+
+        valuesToInsert.add(insertValueTextField.getText());
+
+        insertValueTextField.clear();
+
+        fieldNameLabel.setText(insertFields[valuesToInsert.size()].getName());
+
+    }
+
+    @FXML
+    private void dismissQueryButtonPressed(ActionEvent event){
+        valuesToInsert.clear();
+        insertFields = null;
+        insertValueTextField.clear();
+        fieldNameLabel.setText("");
+
+        insertAnchorPane.setVisible(false);
     }
 
     private void updateQueryView(){
