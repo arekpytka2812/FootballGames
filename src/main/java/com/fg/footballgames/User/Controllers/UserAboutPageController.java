@@ -14,6 +14,7 @@ public class UserAboutPageController {
 
     @FXML
     Label InfoLabel;
+
     @FXML
     Hyperlink repositoryHyperlink;
 

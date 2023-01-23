@@ -2,6 +2,8 @@ package com.fg.footballgames.DAOs.Tables;
 
 import com.fg.footballgames.DAOs.IDaoTableModel;
 
+import java.util.List;
+
 public class Personal_data implements IDaoTableModel {
 
     private String id_person;
@@ -22,6 +24,14 @@ public class Personal_data implements IDaoTableModel {
 
     public Personal_data(){
 
+    }
+
+    public Personal_data(List<String> values){
+        this.id_person = values.get(0);
+        this.name = values.get(1);
+        this.surname = values.get(2);
+        this.year_of_birth = values.get(3);
+        this.nationality = values.get(4);
     }
 
     public Personal_data(String id_person) {

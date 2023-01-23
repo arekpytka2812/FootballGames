@@ -2,6 +2,8 @@ package com.fg.footballgames.DAOs.Tables;
 
 import com.fg.footballgames.DAOs.IDaoTableModel;
 
+import java.util.List;
+
 public class Accounts implements IDaoTableModel {
 
     private String login;
@@ -20,6 +22,12 @@ public class Accounts implements IDaoTableModel {
 
     public Accounts(){
 
+    }
+
+    public Accounts(List<String> values){
+        this.login = values.get(0);
+        this.password = values.get(1);
+        this.fav_club = values.get(2);
     }
 
     public Accounts(String login){
