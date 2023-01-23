@@ -20,26 +20,35 @@ public class UserPlayersCenterController {
 
     @FXML
     RadioButton allClubsRadio;
+
     @FXML
     RadioButton chosenClubRadio;
+
     @FXML
     ChoiceBox chosenClubChoiceBox;
+
     @FXML
     TableView playersTableView;
-    private DaoViewEnum classType;
+
+    DaoViewEnum classType = DaoViewEnum.valueOf("Players_view");
     private ObservableList<String> clubsList = FXCollections.observableArrayList();
     private ObservableList<IDaoViewModel> playersList;
     ToggleGroup group = new ToggleGroup();
 
     @FXML
     private void initialize(){
+
         allClubsRadio.setToggleGroup(group);
         chosenClubRadio.setToggleGroup(group);
+
         var clubsListFromDB = DaoViewManager.selectAll(Clubs_view.class);
+
         for(Clubs_view club : clubsListFromDB){
             clubsList.add(club.getId_club());
         }
+
         chosenClubChoiceBox.setItems(clubsList);
+
     }
 
     @FXML
@@ -52,6 +61,7 @@ public class UserPlayersCenterController {
 
     @FXML
     private void allClubsRadioClicked(ActionEvent event){
+
         chosenClubChoiceBox.setDisable(true);
         playersTableView.getColumns().clear();
 

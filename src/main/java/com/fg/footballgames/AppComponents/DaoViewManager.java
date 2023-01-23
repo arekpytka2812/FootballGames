@@ -1,11 +1,13 @@
 package com.fg.footballgames.AppComponents;
 
 import com.fg.footballgames.DAOs.IDaoViewModel;
+import com.fg.footballgames.DAOs.Views.Players_view;
 import com.fg.footballgames.User.UserMain;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
 import java.sql.Connection;
+import java.sql.SQLException;
 
 public class DaoViewManager {
 
@@ -23,6 +25,28 @@ public class DaoViewManager {
             var st = connection.createStatement();
 
             var res = st.executeQuery("SELECT * FROM " + className);
+
+            modelsList = ResultSetWrapper.resultSetToObservableList(res, clazz);
+
+            DataBaseConnector.disconnect(connection);
+
+        }catch (Exception e) {
+
+        }
+
+        return modelsList;
+    }
+
+    public static <T extends IDaoViewModel> ObservableList<T> selectQuery(String query, Class<T> clazz){
+
+        ObservableList<T> modelsList = FXCollections.observableArrayList();
+
+        try{
+            connection = DataBaseConnector.connect(UserMain.loggedUser.getConLogin(), UserMain.loggedUser.getConPass());
+
+            var st = connection.createStatement();
+
+            var res = st.executeQuery(query);
 
             modelsList = ResultSetWrapper.resultSetToObservableList(res, clazz);
 
@@ -67,4 +91,5 @@ public class DaoViewManager {
 
         return subs[subs.length - 1].toLowerCase();
     }
+
 }
